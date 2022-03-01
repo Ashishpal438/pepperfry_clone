@@ -1,0 +1,39 @@
+.footer{
+    margin:0;
+    padding:4%;
+    background-color: antiquewhite;
+    font-family: Manrope,sans-serif;
+}
+.first{
+    display: grid;
+    grid-template-columns: repeat(4,23%);
+    column-gap: 2%;
+}
+.second{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(3,31%);
+    column-gap: 2%;
+    margin-bottom: 2em;
+}
+.third{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin-bottom: 2em;
+}
+.fourth{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 2em;
+}
+.horizontal{
+    display: flex;
+    column-gap: 2%;
+}
+.vertical{
+    display: flex;
+    flex-direction:column;
+    row-gap: 1em;
+}
