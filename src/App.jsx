@@ -1,12 +1,10 @@
 import './App.css';
-import { Footer } from './Components/Footer/Footer';
-import Coursole from './Components/Home/coursole';
+import { Home } from './Components/Home/Home';
 
 function App() {
   return (
     <div className="App">
-      <Coursole/>
-     <Footer/>
+     <Home/>
     </div>
   );
 }

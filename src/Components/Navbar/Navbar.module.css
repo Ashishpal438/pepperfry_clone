@@ -41,6 +41,7 @@ h4{
     width: 45%;
     background-color: rgb(245,245,245);
     display: flex;
+    position: relative;
 }
 
 .search input{

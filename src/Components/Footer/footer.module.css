@@ -52,13 +52,15 @@
     grid-template-columns: repeat(6,14%);
     column-gap: 2%;
 }
-img{
+.download>img,.payment>img{
     width:100%;
     max-width: 200px;
 }
 .social>img{
+    width: 100%;
     max-width: 65px;
 }
+
 .menu>*{
     cursor: pointer;
 }
