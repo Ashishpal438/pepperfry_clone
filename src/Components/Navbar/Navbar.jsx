@@ -48,6 +48,7 @@ export const Navbar = () => {
   const [meta, setMeta] = React.useState("");
   const [searchKey, setSearchKey] = React.useState("");
   const [search, setSearch] = React.useState(false);
+  const [loginVis, setLoginVis] = React.useState(false);
 
   const cancleMeta = () => {
     setMeta("");
@@ -93,8 +94,13 @@ export const Navbar = () => {
             <div className={styles.profile}>
               <BsHeart className={styles.profileIcon}/>
               <RiShoppingCart2Line className={styles.profileIcon}/>
-              <HiOutlineUser size="2rem"/>
+              <HiOutlineUser size="2rem" style={{position:"relative"}} onMouseEnter={ () => setLoginVis(true)} onMouseLeave={ () => setLoginVis(false)}/>
+                {loginVis && ( <div className={styles.loginVisible}>
+                  <button>LOGIN/ REGISTER</button>
+                  <p>To access your account & manage orders</p>
+                </div> ) }
             </div>
+
           </RightNav> 
         </div>
         
@@ -134,7 +140,7 @@ export const Navbar = () => {
             )
           }
 
-          <h4>Need Help?</h4>
+          <h4 className={styles.head4}>Need Help?</h4>
         </div>  
               
       </NavBar>
