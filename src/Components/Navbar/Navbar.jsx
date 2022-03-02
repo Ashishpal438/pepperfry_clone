@@ -8,6 +8,7 @@ import { HiOutlineUser } from 'react-icons/hi';
 import MetaTab from './MetaTab';
 import SearchTab from './SearchTab';
 
+
 const NavBar = styled.div`
   padding: 1rem 6rem;
   border-bottom: 1px solid rgb(230, 230, 230);
@@ -92,7 +93,7 @@ export const Navbar = () => {
             </div>
 
             <div className={styles.profile}>
-              <BsHeart className={styles.profileIcon}/>
+              <BsHeart className={styles.profileIcon} />
               <RiShoppingCart2Line className={styles.profileIcon}/>
               <HiOutlineUser size="2rem" style={{position:"relative"}} onMouseEnter={ () => setLoginVis(true)} onMouseLeave={ () => setLoginVis(false)}/>
                 {loginVis && ( <div className={styles.loginVisible}>
