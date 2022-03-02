@@ -109,7 +109,7 @@ export const Footer = () => {
           <Typography variant="h4">
             Download App
           </Typography>
-          <div>
+          <div className={styles.download}>
             <img src="https://ii1.pepperfry.com/images/web21-footer-apple-appstore-logo.png" alt="" srcset="" onClick={() => { }} />
             <br />
             <img src="https://ii1.pepperfry.com/images/web21-footer-google-playstore-logo.png" alt="" srcset="" onClick={() => { }} />
