@@ -6,6 +6,7 @@ import { RiShoppingCart2Line } from 'react-icons/ri';
 import { BsHeart } from 'react-icons/bs';
 import { HiOutlineUser } from 'react-icons/hi';
 import MetaTab from './MetaTab';
+import SearchTab from './SearchTab';
 
 
 const NavBar = styled.div`
@@ -46,9 +47,22 @@ const Li = styled.li`
 export const Navbar = () => {
   const [subMenu, setSubMenu] = React.useState("shop");
   const [meta, setMeta] = React.useState("");
+  const [searchKey, setSearchKey] = React.useState("");
+  const [search, setSearch] = React.useState(false);
+  const [loginVis, setLoginVis] = React.useState(false);
 
   const cancleMeta = () => {
     setMeta("");
+  }
+
+  const handleEnter = (e) => {
+    if(e.key === 'Enter'){
+      console.log("ertyuiop", searchKey)
+    }
+  }
+
+  const handleRemoveSearch = () => {
+    setSearch(false)
   }
   return (
     <>
@@ -65,9 +79,10 @@ export const Navbar = () => {
                 </ul>
               {/* </div> */}
               <div className={styles.search}>
-                <input type="text" placeholder="Door to happiness begins with a Search"/>
+                <input type="text" placeholder="Door to happiness begins with a Search" value={searchKey} onChange={(e) => setSearchKey(e.target.value)} onKeyPress={handleEnter} onClick={() => setSearch(true)} />
                 <FiSearch className={styles.icon}/>
               </div>
+              {search && <SearchTab handleRemoveSearch={handleRemoveSearch}/>}
             </div>
           </LeftNav>
 
@@ -80,8 +95,13 @@ export const Navbar = () => {
             <div className={styles.profile}>
               <BsHeart className={styles.profileIcon} />
               <RiShoppingCart2Line className={styles.profileIcon}/>
-              <HiOutlineUser size="2rem"/>
+              <HiOutlineUser size="2rem" style={{position:"relative"}} onMouseEnter={ () => setLoginVis(true)} onMouseLeave={ () => setLoginVis(false)}/>
+                {loginVis && ( <div className={styles.loginVisible}>
+                  <button>LOGIN/ REGISTER</button>
+                  <p>To access your account & manage orders</p>
+                </div> ) }
             </div>
+
           </RightNav> 
         </div>
         
@@ -121,7 +141,7 @@ export const Navbar = () => {
             )
           }
 
-          <h4>Need Help?</h4>
+          <h4 className={styles.head4}>Need Help?</h4>
         </div>  
               
       </NavBar>

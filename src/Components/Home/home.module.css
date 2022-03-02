@@ -40,17 +40,15 @@
 
 .cardContainer2 {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 15px;
     width: 89%;
     margin: auto;
-    border: 1px solid;
 }
 
 .cardContainer2 img {
-    width: 300px;
-    height: 427px;
+    width: 470px;
+    height: 500px;
     cursor: pointer;
 }
 
@@ -58,14 +56,13 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-gap: 15px;
-    /* width: 80%; */
     margin: auto;
     cursor: pointer;
 }
 
 .grid img {
-    width: 100px;
-    height: 104px;
+    width: 255px;
+    height: 240px;
     cursor: pointer;
     margin-bottom: 0px !important;
 }
@@ -79,8 +76,9 @@
 .grey{
     color: rgba(0, 0, 0, 0.651);
     margin-top: 0px;
+    margin-bottom: 50px;
 }
 
 .slider img {
-    height: 350px ;
+    height: 400px ;
 }

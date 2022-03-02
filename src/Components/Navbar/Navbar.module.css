@@ -11,7 +11,7 @@
     height: 30px;
     text-align: justify;
 }
-h4{
+.head4{
     position: absolute;
     right: 0;
     top: 1rem;
@@ -41,6 +41,7 @@ h4{
     width: 45%;
     background-color: rgb(245,245,245);
     display: flex;
+    position: relative;
 }
 
 .search input{
@@ -69,5 +70,30 @@ h4{
     cursor: pointer;
     margin-right: 1rem;
     font-size: 2rem;
+}
+
+.loginVisible{
+    width: 200px;
+    z-index: 2;
+    background-color: white;
+    position: absolute;
+    right: 6rem;
+    padding: 1rem;
+    box-shadow: 5px 2px 5px 5px rgb(231, 230, 230);
+}
+
+.loginVisible button{
+    background-color: rgb(255,141,53);
+    border: 1px solid rgb(255,141,53);
+    color: white;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 190px;
+}
+
+.loginVisible p{
+    margin-top: 1rem;
+    font-size: 0.8rem;
 }
 
