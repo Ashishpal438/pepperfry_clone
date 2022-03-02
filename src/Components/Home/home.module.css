@@ -6,7 +6,7 @@
 }
 
 .heading {
-    width: 85%;
+    width: 89%;
     margin: auto;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding-top: 40px;
@@ -15,24 +15,24 @@
 
 .cardContainer{
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 15px;
-    width: 85%;
+    width: 89%;
     margin: auto;
 }
 
 .cardContainer img {
-    width: 305px;
-    height: 225px;
-    cursor: pointer;
+    width: 361px;
 }
+
+
 
 .cardContainer p {
     margin-top: 5px;
     font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 
 
 
@@ -43,12 +43,13 @@
     justify-content: center;
     align-items: center;
     gap: 15px;
-    width: 85%;
+    width: 89%;
     margin: auto;
+    border: 1px solid;
 }
 
 .cardContainer2 img {
-    width: 400px;
+    width: 300px;
     height: 427px;
     cursor: pointer;
 }
@@ -57,20 +58,20 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-gap: 15px;
-    width: 80%;
+    /* width: 80%; */
     margin: auto;
     cursor: pointer;
 }
 
 .grid img {
-    width: 210px;
-    height: 204px;
+    width: 100px;
+    height: 104px;
     cursor: pointer;
     margin-bottom: 0px !important;
 }
 
 
-/* grey */
+
 .coffee {
     margin-bottom: 0;
     font-size: 18px;
@@ -81,5 +82,5 @@
 }
 
 .slider img {
-    height: 350px;
+    height: 350px ;
 }

@@ -1,11 +1,13 @@
 import React from 'react'
 import styles from './home.module.css'
 
-export const ShopByRoom = () => {
+export const MidComponent = () => {
   return (
       <>
     <div className={styles.mainContainer}>
+    
         <h1 className={styles.heading}>Shop By Room</h1>
+
         <div className={styles.cardContainer}>
             <div>
                 <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_1__2x_17022022.jpg" alt="Living Room" />

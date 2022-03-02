@@ -1,11 +1,13 @@
 import React from 'react'
 import { Footer } from '../Footer/Footer'
-import { ShopByRoom } from './ShopByRoom'
+import { Navbar } from '../Navbar/Navbar'
+import { MidComponent } from './MidComponent'
 
 export const Home = () => {
   return (
     <div>
-      <ShopByRoom/>
+      <Navbar/>
+      <MidComponent/>
       <Footer/>
     </div>
   )
