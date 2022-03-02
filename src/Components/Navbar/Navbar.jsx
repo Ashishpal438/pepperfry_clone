@@ -6,6 +6,7 @@ import { RiShoppingCart2Line } from 'react-icons/ri';
 import { BsHeart } from 'react-icons/bs';
 import { HiOutlineUser } from 'react-icons/hi';
 import MetaTab from './MetaTab';
+import SearchTab from './SearchTab';
 
 const NavBar = styled.div`
   padding: 1rem 6rem;
@@ -45,9 +46,21 @@ const Li = styled.li`
 export const Navbar = () => {
   const [subMenu, setSubMenu] = React.useState("shop");
   const [meta, setMeta] = React.useState("");
+  const [searchKey, setSearchKey] = React.useState("");
+  const [search, setSearch] = React.useState(false);
 
   const cancleMeta = () => {
     setMeta("");
+  }
+
+  const handleEnter = (e) => {
+    if(e.key === 'Enter'){
+      console.log("ertyuiop", searchKey)
+    }
+  }
+
+  const handleRemoveSearch = () => {
+    setSearch(false)
   }
   return (
     <>
@@ -64,9 +77,10 @@ export const Navbar = () => {
                 </ul>
               {/* </div> */}
               <div className={styles.search}>
-                <input type="text" placeholder="Door to happiness begins with a Search"/>
+                <input type="text" placeholder="Door to happiness begins with a Search" value={searchKey} onChange={(e) => setSearchKey(e.target.value)} onKeyPress={handleEnter} onClick={() => setSearch(true)} />
                 <FiSearch className={styles.icon}/>
               </div>
+              {search && <SearchTab handleRemoveSearch={handleRemoveSearch}/>}
             </div>
           </LeftNav>
 
