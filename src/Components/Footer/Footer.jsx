@@ -106,9 +106,11 @@ export const Footer = () => {
           </div>
         </div>
         <div>
-          <Typography variant="h4">
-            Download App
-          </Typography>
+          <div className={styles.download}>
+            <h4>
+              Download App
+            </h4>
+          </div>
           <div>
             <img src="https://ii1.pepperfry.com/images/web21-footer-apple-appstore-logo.png" alt="" srcset="" onClick={() => { }} />
             <br />
@@ -175,7 +177,7 @@ export const Footer = () => {
             <img src="https://ii1.pepperfry.com/images/web21-footer-youtube-logo.png" alt="" srcset="" />
             <img src="https://ii1.pepperfry.com/images/web21-footer-instagram-logo.png" alt="" srcset="" />
             <img src="https://ii1.pepperfry.com/images/web21-footer-linkedin-logo.png" alt="" srcset="" />
-            <img src="https://ii1.pepperfry.com/images/web21-footer-pinterest-logo.png" alt="" srcset=""/>
+            <img src="https://ii1.pepperfry.com/images/web21-footer-pinterest-logo.png" alt="" srcset="" />
           </div>
         </div>
       </div>
