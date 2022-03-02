@@ -98,7 +98,7 @@ export const Navbar = () => {
           </RightNav> 
         </div>
         
-        <div style={{display: "flex", position:"relative"}} onMouseLeave={ () => setSubMenu("shop")} >
+        <div className={styles.heading} style={{display: "flex", position:"relative"}} onMouseLeave={ () => setSubMenu("shop")} >
         
           {
             subMenu == "shop" ? (
