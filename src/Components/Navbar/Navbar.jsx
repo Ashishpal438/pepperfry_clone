@@ -1,7 +1,132 @@
-import React from 'react'
+import React from 'react';
+import styles from './Navbar.module.css';
+import styled from 'styled-components';
+import { FiSearch } from 'react-icons/fi';
+import { RiShoppingCart2Line } from 'react-icons/ri';
+import { BsHeart } from 'react-icons/bs';
+import { HiOutlineUser } from 'react-icons/hi';
+import MetaTab from './MetaTab';
 
+const NavBar = styled.div`
+  padding: 1rem 6rem;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  position: relative;
+`;
+const LeftNav = styled.div`
+  float: left;
+  // background:pink;
+  width: 75%;
+`;
+
+const RightNav = styled.div`
+  margin-left: 1.5rem;
+  display: flex;
+  width: 23%;
+`;
+
+const Li = styled.li`
+  float: left;
+  display: block;
+  margin-right: 3rem;
+  cursor: pointer;
+
+  ${props => props.selected == props.subMenu ?
+    ({
+      color: "black",
+      fontWeight: "bolder",
+      borderBottom: "2px solid orange"
+    }) :
+    ({
+      color: "gray"
+    })
+  }
+
+`;
 export const Navbar = () => {
+  const [subMenu, setSubMenu] = React.useState("shop");
+  const [meta, setMeta] = React.useState("");
+
+  const cancleMeta = () => {
+    setMeta("");
+  }
   return (
-    <div>Navbar</div>
+    <>
+      <NavBar >
+        <div style={{display:"flex"}}>
+          <LeftNav>
+            <div style={{display:"flex"}}>
+              <img src="/pepperfry-logo.png" width="200px" height="45px"/>
+              {/* <div> */}
+                <ul className={styles.menu}>
+                  <Li selected="shop" subMenu={subMenu} onMouseOver={() => setSubMenu("shop")}>SHOP</Li>
+                  <Li selected="inspired" subMenu={subMenu} onMouseOver={() => setSubMenu("inspired")} >GET INSPIRED</Li>
+                  <Li selected="partner" subMenu={subMenu} onMouseOver={() => setSubMenu("partner")} >PARTNER</Li>
+                </ul>
+              {/* </div> */}
+              <div className={styles.search}>
+                <input type="text" placeholder="Door to happiness begins with a Search"/>
+                <FiSearch className={styles.icon}/>
+              </div>
+            </div>
+          </LeftNav>
+
+          <RightNav>
+            <div>
+              <p>Enter Pincode</p>
+              <p style={{color: "orangered", fontSize: "0.9rem"}}>Find Pepperfry studio</p>
+            </div>
+
+            <div className={styles.profile}>
+              <BsHeart className={styles.profileIcon}/>
+              <RiShoppingCart2Line className={styles.profileIcon}/>
+              <HiOutlineUser size="2rem"/>
+            </div>
+          </RightNav> 
+        </div>
+        
+        <div style={{display: "flex", position:"relative"}} onMouseLeave={ () => setSubMenu("shop")} >
+        
+          {
+            subMenu == "shop" ? (
+              <ul className={styles.menu} >
+                <li onMouseOver={() => setMeta("furniture")} >Furniture</li>
+                <li onMouseOver={() => setMeta("Sofas and Recliners")} >Sofas & Recliners</li>
+                <li onMouseOver={() => setMeta("cabinetry")} >Cabinetry</li>
+                <li>Beds</li>
+                <li>Mattresses</li>
+                <li>Furnishings</li>
+                <li>Decor</li>
+                <li>Lighting</li>
+                <li>Appliances</li>
+                <li>Modular</li>
+            </ul>
+            ) : subMenu == "inspired" ? (
+              <ul className={styles.menu}>
+                <li>Ideas</li>
+                <li>Buying Guides</li>
+                <li>Visit Studios</li>
+              
+              </ul>
+            ) : 
+            (
+              <ul className={styles.menu}>
+                <li>Sell on Pepperfry</li>
+                <li>Become a Franchise</li>
+                <li>Place Bulk Orders</li>
+                <li>Join Us As Design Partner</li>
+                <li>Careers</li>
+            
+              </ul>
+            )
+          }
+
+          <h4>Need Help?</h4>
+        </div>  
+              
+      </NavBar>
+
+      { meta && <MetaTab currentSubMenu = {meta} cancleMeta={cancleMeta} /> }
+    </>
+
   )
 }

@@ -1,0 +1,73 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Manrope', sans-serif;
+}
+
+.menu{
+    list-style-type: none;
+    margin-top: 1rem;
+    display: flex;
+    height: 30px;
+    text-align: justify;
+}
+h4{
+    position: absolute;
+    right: 0;
+    top: 1rem;
+    cursor: pointer;
+}
+
+.menu:nth-child(2){
+    margin-left: 2.5rem;
+    /* font-size: 1.1rem; */
+}
+
+.menu > li{
+    /* float: left; */
+    flex-direction: row;
+    margin-right: 2rem;
+    letter-spacing: 1px;
+    color: black;
+    font-weight: bold;
+}
+
+.menu > li:hover{
+    border-bottom: 2px solid orangered;
+    cursor: pointer;
+}
+
+.search{
+    width: 45%;
+    background-color: rgb(245,245,245);
+    display: flex;
+}
+
+.search input{
+    width: 85%;
+    border: none;
+    background-color: rgb(245,245,245);
+    font-size: 1rem;
+    padding-left: 1rem;
+}
+.search input:focus{
+    outline: none;
+}
+
+.icon{
+    width: 10%;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.profile{
+    padding: 0.5rem;
+    margin-left: 15%; 
+}
+
+.profileIcon{
+    cursor: pointer;
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
