@@ -32,8 +32,10 @@
 }
 .horizontal{
     text-align: center;
-    display: flex;
-    column-gap: 2%;
+        display: grid;
+        grid-template-columns: repeat(6 12%);
+        column-gap: 2%;
+        row-gap: 2%;
 }
 .vertical{
     display: flex;
@@ -56,7 +58,7 @@
 }
 .social>img{
     width: 100%;
-    max-width: 65px;
+    max-width: 55px;
 }
 
 .menu>*{
@@ -68,10 +70,29 @@ img:hover{
 .vertical>*:hover,.horizontal>*:hover{
     cursor: pointer;
 }
+.download{
+    font-size: 2rem;
+}
 @media screen and (max-width:1200px) {
     .footer{
         font-size: .8rem;
     }
+    .download{
+        font-size: 1rem;
+    }
     
+    
+}
+@media screen and (max-width:650px) {
+    .footer{
+        font-size: .6rem;
+    }
+    .horizontal{
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(3 30%);
+        column-gap: 2%;
+        row-gap: 2%;
+    }
     
 }
