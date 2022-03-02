@@ -9,7 +9,7 @@ export const Footer = () => {
     <div className={styles.footer}>
       <div className={styles.first}>
         <div>
-          <Typography variant="h6">
+          <Typography variant="subtitle1">
             Useful Links
           </Typography>
           <div className={styles.vertical}>
@@ -47,7 +47,7 @@ export const Footer = () => {
           </div>
         </div>
         <div>
-          <Typography variant="h6">
+          <Typography variant="subtitle1">
             Partners
           </Typography>
           <div className={styles.vertical}>
@@ -79,7 +79,7 @@ export const Footer = () => {
           </div>
         </div>
         <div>
-          <Typography variant="h6">
+          <Typography variant="subtitle1">
             Need Help?
           </Typography>
           <div className={styles.vertical}>
@@ -118,7 +118,7 @@ export const Footer = () => {
       </div>
       <div className={styles.second}>
         <div>
-          <Typography variant="h6">
+          <Typography variant="subtitle1">
             Popular Categories
           </Typography>
           <div className={styles.menu}>
@@ -128,7 +128,7 @@ export const Footer = () => {
           </div>
         </div>
         <div>
-          <Typography variant="h6">
+          <Typography variant="subtitle1">
             Popular Brands
           </Typography>
           <div className={styles.menu}>
@@ -138,7 +138,7 @@ export const Footer = () => {
           </div>
         </div>
         <div>
-          <Typography variant="h6">
+          <Typography variant="subtitle1">
             Cities we deliver to
           </Typography>
           <div className={styles.menu}>
@@ -151,7 +151,7 @@ export const Footer = () => {
       <hr />
       <div className={styles.third}>
         <div>
-          <Typography variant="h6">
+          <Typography variant="subtitle1">
             We accept
           </Typography>
           <div className={styles.payment}>
@@ -166,7 +166,7 @@ export const Footer = () => {
           </div>
         </div>
         <div>
-          <Typography variant="h6">
+          <Typography variant="subtitle1">
             Like what you see? You'll like us even more here
           </Typography>
           <div className={styles.social}>

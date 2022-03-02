@@ -1,7 +1,8 @@
 .footer{
     margin:0;
     padding:4%;
-    background-color: antiquewhite;
+    font-size: 1rem;
+    background-color: #f3f5f7;
     font-family: Manrope,sans-serif;
 }
 .first{
@@ -64,4 +65,11 @@ img:hover{
 }
 .vertical>*:hover,.horizontal>*:hover{
     cursor: pointer;
+}
+@media screen and (max-width:1200px) {
+    .footer{
+        font-size: .8rem;
+    }
+    
+    
 }
