@@ -1,0 +1,85 @@
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.heading {
+    width: 85%;
+    margin: auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 40px;
+    padding-bottom: 15px;
+}
+
+.cardContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 85%;
+    margin: auto;
+}
+
+.cardContainer img {
+    width: 305px;
+    height: 225px;
+    cursor: pointer;
+}
+
+.cardContainer p {
+    margin-top: 5px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+
+/* what's Everyone's Eyeing */
+
+.cardContainer2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 85%;
+    margin: auto;
+}
+
+.cardContainer2 img {
+    width: 400px;
+    height: 427px;
+    cursor: pointer;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 15px;
+    width: 80%;
+    margin: auto;
+    cursor: pointer;
+}
+
+.grid img {
+    width: 210px;
+    height: 204px;
+    cursor: pointer;
+    margin-bottom: 0px !important;
+}
+
+
+/* grey */
+.coffee {
+    margin-bottom: 0;
+    font-size: 18px;
+}
+.grey{
+    color: rgba(0, 0, 0, 0.651);
+    margin-top: 0px;
+}
+
+.slider img {
+    height: 350px;
+}
