@@ -1,0 +1,75 @@
+.footer{
+    margin:0;
+    padding:4%;
+    font-size: 1rem;
+    background-color: #f3f5f7;
+    font-family: Manrope,sans-serif;
+}
+.first{
+    display: grid;
+    grid-template-columns: repeat(4,23%);
+    column-gap: 2%;
+}
+.second{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(3,31%);
+    column-gap: 2%;
+    margin-bottom: 2em;
+}
+.third{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: 50% 40%;
+    column-gap:5% ;
+    margin-bottom: 2em;
+    
+}
+.fourth{
+    margin: 2em;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.horizontal{
+    text-align: center;
+    display: flex;
+    column-gap: 2%;
+}
+.vertical{
+    display: flex;
+    flex-direction:column;
+    row-gap: 2%;
+}
+.payment{
+    display: grid;
+    grid-template-columns: repeat(8,10.75%);
+    column-gap: 2%;
+}
+.social{
+    display: grid;
+    grid-template-columns: repeat(6,14%);
+    column-gap: 2%;
+}
+img{
+    width:100%;
+    max-width: 200px;
+}
+.social>img{
+    max-width: 65px;
+}
+.menu>*{
+    cursor: pointer;
+}
+img:hover{
+    cursor: pointer;
+}
+.vertical>*:hover,.horizontal>*:hover{
+    cursor: pointer;
+}
+@media screen and (max-width:1200px) {
+    .footer{
+        font-size: .8rem;
+    }
+    
+    
+}
