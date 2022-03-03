@@ -95,8 +95,8 @@ export const Navbar = () => {
             <div className={styles.profile}>
               <BsHeart className={styles.profileIcon} />
               <RiShoppingCart2Line className={styles.profileIcon}/>
-              <HiOutlineUser size="2rem" style={{position:"relative"}} onMouseEnter={ () => setLoginVis(true)} onMouseLeave={ () => setLoginVis(false)}/>
-                {loginVis && ( <div className={styles.loginVisible}>
+              <HiOutlineUser size="2rem" style={{position:"relative"}} onMouseEnter={ () => setLoginVis(true)} />
+                {loginVis && ( <div className={styles.loginVisible} onMouseLeave={ () => setLoginVis(false)}>
                   <button>LOGIN/ REGISTER</button>
                   <p>To access your account & manage orders</p>
                 </div> ) }
@@ -113,13 +113,13 @@ export const Navbar = () => {
                 <li onMouseOver={() => setMeta("furniture")} >Furniture</li>
                 <li onMouseOver={() => setMeta("Sofas and Recliners")} >Sofas & Recliners</li>
                 <li onMouseOver={() => setMeta("cabinetry")} >Cabinetry</li>
-                <li>Beds</li>
-                <li>Mattresses</li>
-                <li>Furnishings</li>
-                <li>Decor</li>
-                <li>Lighting</li>
-                <li>Appliances</li>
-                <li>Modular</li>
+                <li onMouseOver={() => setMeta("beds")}>Beds</li>
+                <li onMouseOver={() => setMeta("mattresses")}>Mattresses</li>
+                <li onMouseOver={() => setMeta("furnishings")}>Furnishings</li>
+                <li onMouseOver={() => setMeta("decor")}>Decor</li>
+                <li onMouseOver={() => setMeta("lighting")}>Lighting</li>
+                <li onMouseOver={() => setMeta("appliances")}>Appliances</li>
+                <li onMouseOver={() => setMeta("modular")}>Modular</li>
             </ul>
             ) : subMenu == "inspired" ? (
               <ul className={styles.menu}>
