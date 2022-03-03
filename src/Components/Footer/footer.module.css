@@ -1,0 +1,98 @@
+.footer{
+    margin:0;
+    padding:4%;
+    font-size: 1rem;
+    background-color: #f3f5f7;
+    font-family: Manrope,sans-serif;
+}
+.first{
+    display: grid;
+    grid-template-columns: repeat(4,23%);
+    column-gap: 2%;
+}
+.second{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(3,31%);
+    column-gap: 2%;
+    margin-bottom: 2em;
+}
+.third{
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: 50% 40%;
+    column-gap:5% ;
+    margin-bottom: 2em;
+    
+}
+.fourth{
+    margin: 2em;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.horizontal{
+    text-align: center;
+        display: grid;
+        grid-template-columns: repeat(6 12%);
+        column-gap: 2%;
+        row-gap: 2%;
+}
+.vertical{
+    display: flex;
+    flex-direction:column;
+    row-gap: 2%;
+}
+.payment{
+    display: grid;
+    grid-template-columns: repeat(8,10.75%);
+    column-gap: 2%;
+}
+.social{
+    display: grid;
+    grid-template-columns: repeat(6,14%);
+    column-gap: 2%;
+}
+.download>img,.payment>img{
+    width:100%;
+    max-width: 200px;
+}
+.social>img{
+    width: 100%;
+    max-width: 55px;
+}
+
+.menu>*{
+    cursor: pointer;
+}
+img:hover{
+    cursor: pointer;
+}
+.vertical>*:hover,.horizontal>*:hover{
+    cursor: pointer;
+}
+.download{
+    font-size: 2rem;
+}
+@media screen and (max-width:1200px) {
+    .footer{
+        font-size: .8rem;
+    }
+    .download{
+        font-size: 1rem;
+    }
+    
+    
+}
+@media screen and (max-width:650px) {
+    .footer{
+        font-size: .6rem;
+    }
+    .horizontal{
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(3 30%);
+        column-gap: 2%;
+        row-gap: 2%;
+    }
+    
+}

@@ -8,6 +8,7 @@ import { HiOutlineUser } from 'react-icons/hi';
 import MetaTab from './MetaTab';
 import SearchTab from './SearchTab';
 
+
 const NavBar = styled.div`
   padding: 1rem 6rem;
   border-bottom: 1px solid rgb(230, 230, 230);
@@ -92,7 +93,7 @@ export const Navbar = () => {
             </div>
 
             <div className={styles.profile}>
-              <BsHeart className={styles.profileIcon}/>
+              <BsHeart className={styles.profileIcon} />
               <RiShoppingCart2Line className={styles.profileIcon}/>
               <HiOutlineUser size="2rem" style={{position:"relative"}} onMouseEnter={ () => setLoginVis(true)} />
                 {loginVis && ( <div className={styles.loginVisible} onMouseLeave={ () => setLoginVis(false)}>
@@ -104,7 +105,7 @@ export const Navbar = () => {
           </RightNav> 
         </div>
         
-        <div style={{display: "flex", position:"relative"}} onMouseLeave={ () => setSubMenu("shop")} >
+        <div className={styles.heading} style={{display: "flex", position:"relative"}} onMouseLeave={ () => setSubMenu("shop")} >
         
           {
             subMenu == "shop" ? (
@@ -112,13 +113,13 @@ export const Navbar = () => {
                 <li onMouseOver={() => setMeta("furniture")} >Furniture</li>
                 <li onMouseOver={() => setMeta("Sofas and Recliners")} >Sofas & Recliners</li>
                 <li onMouseOver={() => setMeta("cabinetry")} >Cabinetry</li>
-                <li>Beds</li>
-                <li>Mattresses</li>
-                <li>Furnishings</li>
-                <li>Decor</li>
-                <li>Lighting</li>
-                <li>Appliances</li>
-                <li>Modular</li>
+                <li onMouseOver={() => setMeta("beds")}>Beds</li>
+                <li onMouseOver={() => setMeta("mattresses")}>Mattresses</li>
+                <li onMouseOver={() => setMeta("furnishings")}>Furnishings</li>
+                <li onMouseOver={() => setMeta("decor")}>Decor</li>
+                <li onMouseOver={() => setMeta("lighting")}>Lighting</li>
+                <li onMouseOver={() => setMeta("appliances")}>Appliances</li>
+                <li onMouseOver={() => setMeta("modular")}>Modular</li>
             </ul>
             ) : subMenu == "inspired" ? (
               <ul className={styles.menu}>
