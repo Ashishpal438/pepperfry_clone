@@ -1,0 +1,11 @@
+.continueButton{
+background-color: white;
+border: 2px solid orange;
+color: orange;
+padding: 1em 2.8em 1em;
+
+}
+.empty_cart{
+ padding-top: 15em;
+ text-align: center;   
+}
