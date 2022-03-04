@@ -23,7 +23,7 @@ const signupFailure = () => {
 export const signupHandler = (payload) => (dispatch) => {
   dispatch(signupRequest());
   return axios
-    // .post(`https://pepperfry-backend.herokuapp.com/users/signup`, payload)
+    .post(`https://pepperfry-backend1.herokuapp.com/users/signup`, payload)
     .then((res) => dispatch(signupSuccess(res.data)))
     .catch((err) => console.log(err), dispatch(signupFailure()));
 };
@@ -50,7 +50,7 @@ const loginFailure = () => {
 export const loginHandler = (payload) => (dispatch) => {
   dispatch(loginRequest());
   return axios
-    // .post(`https://pepperfry-backend.herokuapp.com/users/login`, payload)
+    .post(`https://pepperfry-backend1.herokuapp.com/users/login`, payload)
     .then((res) => dispatch(loginSuccess(res.data)))
     .catch((err) => dispatch(loginFailure()));
 };
