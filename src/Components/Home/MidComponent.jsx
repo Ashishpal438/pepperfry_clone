@@ -1,12 +1,14 @@
 import React, { useContext } from 'react'
 import styles from './home.module.css'
 import { FaAngleRight, FaAngleLeft} from 'react-icons/fa'
+
 import { useNavigate } from 'react-router-dom'
 import { ProductContext } from '../../Context/ProductContext'
 
 export const MidComponent = () => {
     let navigate = useNavigate();
     let {setProduct} = useContext(ProductContext);
+
 
    const handleClick = (arg) => {
      console.log(arg)
@@ -25,7 +27,6 @@ export const MidComponent = () => {
     navigate("/product");
 
    }
-
 
   return (
       <>

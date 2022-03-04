@@ -5,6 +5,7 @@ import { metadata } from "../Navbar/metadata";
 import { Navbar } from "../Navbar/Navbar";
 import ProductItem from "./ProductItem";
 
+
 export default function Product(){
     let {product, page} = React.useContext(ProductContext);
     const [prodData, setProdData] = React.useState([]);

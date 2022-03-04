@@ -7,11 +7,11 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ProductContextProvider>
     <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ProductContextProvider>   
+      <App />  
     </ProductContextProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
