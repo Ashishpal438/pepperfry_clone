@@ -37,7 +37,7 @@ import ten3 from './images/Div-ten-image3.jpg';
 import ten4 from './images/Div-ten-image4.jpg';
 import ten5 from './images/Div-ten-image5.webp';
 import ten6 from './images/Div-ten-image6.webp';
-
+import Scroll from './Scroll.js';
 function Furniture() {
 
     return ( 
@@ -195,7 +195,7 @@ function Furniture() {
         <h5 className='grey-color'>The latest trends in furniture include bamboo furniture, denim, jungle prints and neutral palette upholstered furniture, multi-functional furniture, unique metal furniture, and artisan-inspired furniture.</h5>
         <h5>What wood is best for furniture?</h5>
         <h5 className='grey-color'>Hardwoods such as maple, oak, teak, mahogany, walnut, ash, acacia are some of the most commonly used wood types that are best for furniture.</h5>
-        <div className='icon-scroll'><Link activeClass="active" to="#App" spy={true} smooth={true} offset={-70} duration={500}></div>
+        <div className='icon-scroll'><Scroll /></div>
      </div > 
        
     </div >
