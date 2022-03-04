@@ -1,7 +1,22 @@
 import React from 'react'
 import styles from './home.module.css'
+import { FaAngleRight, FaAngleLeft} from 'react-icons/fa'
 
 export const MidComponent = () => {
+
+   const handleClick = (arg) => {
+     console.log(arg)
+     const left = Array.from(document.getElementsByClassName('cardContainerSlider'))
+     console.log(left)
+     if(arg === 0){
+     left.className = "cardContainerSlideLeft"
+     }
+     else{
+         left.className = "cardContainerSlideRight"
+     }
+   }
+
+
   return (
       <>
     <div className={styles.mainContainer}>
@@ -59,8 +74,17 @@ export const MidComponent = () => {
 
 
     <div className={styles.mainContainer}>
-    <h1 className={styles.heading}>Your Pocket-Friendly Shoppe</h1>
-     <div className={styles.cardContainer}>
+
+    <div className={styles.pocket}>
+       <h1 className={styles.heading}>Your Pocket-Friendly Shoppe</h1>
+       <div>
+         <FaAngleLeft  style={{fontSize:`40px`, cursor:`pointer`}} onClick={() => handleClick(0)}/>
+         <FaAngleRight style={{fontSize:`40px`, cursor:`pointer`}} onClick={() => handleClick(1)} />
+       </div>
+
+
+    </div>
+     <div className={styles.cardContainerSlider}>
         <div className={styles.slider}>
             <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Budget_Block_WEB_3_2x_17022022-new.jpg" alt="Dining Sets" />
             <p className={styles.coffee}>Coffee Tables &#60; 6K </p>
@@ -81,7 +105,28 @@ export const MidComponent = () => {
              <p className={styles.coffee}>Portable Tables &#60; 8K </p>
             <p className={styles.grey}>88+ Optios</p>
          </div>  
+         <div className={styles.slider}>
+            <img src="https://ii2.pepperfry.com/media/wysiwyg/banners/Homepage_Budget_Block_WEB_1_2x_17022022.jpg" alt="Dining Sets" />
+            <p className={styles.coffee}>4 Seater Dining Sets &#60; 6K </p>
+            <p className={styles.grey}>226+ Optios</p>
+         </div> 
+         <div className={styles.slider}>
+             <img src="https://ii2.pepperfry.com/media/wysiwyg/banners/Homepage_Budget_Block_WEB_3_2x_17022022.jpg" alt="" />
+             <p className={styles.coffee}>Office Chairs &#60; 8K </p>
+            <p className={styles.grey}>343+ Optios</p>
+         </div>  
+         <div className={styles.slider}>
+             <img src="https://ii3.pepperfry.com/media/wysiwyg/banners/Homepage_Budget_Block_WEB_5_2x_17022022.jpg" alt="" />
+             <p className={styles.coffee}>Beside Tables &#60; 6K </p>
+            <p className={styles.grey}>93+ Optios</p>
+         </div>  
+         <div className={styles.slider}>
+             <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Budget_Block_WEB_6_2x_17022022.jpg" alt="" />
+             <p className={styles.coffee}>Portable Tables &#60; 8K </p>
+            <p className={styles.grey}>88+ Optios</p>
+         </div>  
      </div>
+
     </div>
     </>
   )
