@@ -10,6 +10,7 @@ import { Mattress} from './Components/Products/Mattress/Mattress';
 import { Decor } from './Components/Products/Decor/Decor';
 import {Cabinetry} from './Components/Products/Cabinetry/Cabinetry';
 import {Applainces} from './Components/Products/Applainces/Applainces';
+import Product from './Components/Pages/Product';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path='/lighting' element={<Lighting/>} />
         <Route path='/matress' element={<Mattress/>} />
         <Route path='/sofa' element={<Sofa/>}/>
+        <Route path='/product' element={<Product/>} />
      </Routes>
     </div>
   );

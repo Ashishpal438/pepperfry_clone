@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './Navbar.module.css';
 import styled from 'styled-components';
 import { FiSearch } from 'react-icons/fi';
@@ -7,6 +7,8 @@ import { BsHeart } from 'react-icons/bs';
 import { HiOutlineUser } from 'react-icons/hi';
 import MetaTab from './MetaTab';
 import SearchTab from './SearchTab';
+import { ProductContext } from '../../Context/ProductContext';
+import { Link } from 'react-router-dom';
 
 
 const NavBar = styled.div`
@@ -45,6 +47,7 @@ const Li = styled.li`
 
 `;
 export const Navbar = () => {
+  let {setPage} = useContext(ProductContext);
   const [subMenu, setSubMenu] = React.useState("shop");
   const [meta, setMeta] = React.useState("");
   const [searchKey, setSearchKey] = React.useState("");
@@ -70,8 +73,7 @@ export const Navbar = () => {
         <div style={{display:"flex"}}>
           <LeftNav>
             <div style={{display:"flex"}}>
-              <img src="/pepperfry-logo.png" width="200px" height="45px"/>
-              {/* <div> */}
+              <Link to="/"><img src="/pepperfry-logo.png" width="200px" height="45px"/></Link>
                 <ul className={styles.menu}>
                   <Li selected="shop" subMenu={subMenu} onMouseOver={() => setSubMenu("shop")}>SHOP</Li>
                   <Li selected="inspired" subMenu={subMenu} onMouseOver={() => setSubMenu("inspired")} >GET INSPIRED</Li>
@@ -111,15 +113,15 @@ export const Navbar = () => {
             subMenu == "shop" ? (
               <ul className={styles.menu} >
                 <li onMouseOver={() => setMeta("furniture")} >Furniture</li>
-                <li onMouseOver={() => setMeta("Sofas and Recliners")} >Sofas & Recliners</li>
-                <li onMouseOver={() => setMeta("cabinetry")} >Cabinetry</li>
-                <li onMouseOver={() => setMeta("beds")}>Beds</li>
-                <li onMouseOver={() => setMeta("mattresses")}>Mattresses</li>
-                <li onMouseOver={() => setMeta("furnishings")}>Furnishings</li>
-                <li onMouseOver={() => setMeta("decor")}>Decor</li>
-                <li onMouseOver={() => setMeta("lighting")}>Lighting</li>
-                <li onMouseOver={() => setMeta("appliances")}>Appliances</li>
-                <li onMouseOver={() => setMeta("modular")}>Modular</li>
+                <li onMouseOver={() => setMeta("Sofas and Recliners")} onClick={() => setPage("Sofas & Recliners")}>Sofas & Recliners</li>
+                <li onMouseOver={() => setMeta("cabinetry")} onClick={() => setPage("Cabinetry")}>Cabinetry</li>
+                <li onMouseOver={() => setMeta("beds")} onClick={() => setPage("Cabinetry")}>Beds</li>
+                <li onMouseOver={() => setMeta("mattresses")} onClick={() => setPage("Mattresses")}>Mattresses</li>
+                <li onMouseOver={() => setMeta("furnishings")} onClick={() => setPage("Furnishings")}>Furnishings</li>
+                <li onMouseOver={() => setMeta("decor")} onClick={() => setPage("Decor")}>Decor</li>
+                <li onMouseOver={() => setMeta("lighting")} onClick={() => setPage("Lighting")}>Lighting</li>
+                <li onMouseOver={() => setMeta("appliances")} onClick={() => setPage("Appliances")}>Appliances</li>
+                <li onMouseOver={() => setMeta("modular")} onClick={() => setPage("Modular")}>Modular</li>
             </ul>
             ) : subMenu == "inspired" ? (
               <ul className={styles.menu}>
