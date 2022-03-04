@@ -8,6 +8,7 @@ import { HiOutlineUser } from 'react-icons/hi';
 import MetaTab from './MetaTab';
 import SearchTab from './SearchTab';
 import { ProductContext } from '../../Context/ProductContext';
+import { Link } from 'react-router-dom';
 
 
 const NavBar = styled.div`
@@ -72,8 +73,7 @@ export const Navbar = () => {
         <div style={{display:"flex"}}>
           <LeftNav>
             <div style={{display:"flex"}}>
-              <img src="/pepperfry-logo.png" width="200px" height="45px"/>
-              {/* <div> */}
+              <Link to="/"><img src="/pepperfry-logo.png" width="200px" height="45px"/></Link>
                 <ul className={styles.menu}>
                   <Li selected="shop" subMenu={subMenu} onMouseOver={() => setSubMenu("shop")}>SHOP</Li>
                   <Li selected="inspired" subMenu={subMenu} onMouseOver={() => setSubMenu("inspired")} >GET INSPIRED</Li>

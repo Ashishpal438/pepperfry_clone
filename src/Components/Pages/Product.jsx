@@ -16,6 +16,8 @@ export default function Product(){
         .then( res => setProdData(res) )
         .catch( err => console.log(err) )
     }, [])
+
+    console.log("product", product, prodData)
     return (
         <>
         <Navbar/>
