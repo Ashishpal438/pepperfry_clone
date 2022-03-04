@@ -1,8 +1,10 @@
 import styles from "./Product.module.css";
-import { BsHeart } from 'react-icons/bs';
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ProductContext } from "../../Context/ProductContext";
-import { Navbar } from '../Navbar/Navbar';
+import { metadata } from "../Navbar/metadata";
+import { Navbar } from "../Navbar/Navbar";
+import ProductItem from "./ProductItem";
+
 
 export default function Product(){
     let {product, page} = React.useContext(ProductContext);
@@ -39,47 +41,29 @@ export default function Product(){
 
                     <div>
                         <h4>Brand</h4>
+                        <div className={styles.catego}>
+                            {
+                                metadata[product]?.brands.map( (brand) => (<div><input type="checkbox" name="sort"/><label>{brand}</label></div>) )
+                            }
+                            
+                        </div>
                     </div>
 
                     <div>
                         <h4>Price</h4>
+                        <div className={styles.catego}>
+                            <div><input type="checkbox" name="sort"/><label>Under 5,000</label></div>
+                            <div><input type="checkbox" name="sort"/><label>5,000 to 10,000</label></div>
+                            <div><input type="checkbox" name="sort"/><label>10,000 to 15,000</label></div>
+                        </div>
                     </div>
 
-                    <div>
-                        <h4>Dimension</h4>
-                    </div>
-
-                    <div>
-                        <h4>Primary Material</h4>
-                    </div>
-
-                    <div>
-                        <h4>Arm Type</h4>
-                    </div>
-
-                    <div>
-                        <h4>Discount</h4>
-                    </div>
+                   
                 </div>
 
                 <div className={styles.right}>
                     {
-                        prodData?.map( (prod) => (
-                            <div>
-                                <div>
-                                    <img width="100%" height="400px" src={prod.image} />
-                                    <BsHeart className={styles.wishlist}/>
-                                    <button className={styles.cartBtn}>Add To Cart</button>
-                                </div>
-                                <div>
-                                    <p className={styles.dis}>{prod.name}</p>
-                                    <p>{prod.brand}</p>
-                                    <p className={styles.price}>$ {prod.price} <span className={styles.org}>${prod.mrp}</span></p>
-                                    <p className={styles.p}>Earn cashback <span className={styles.bold}>$ {prod.cashback}</span></p>
-                                    <p className={styles.p}>Ships in <span className={styles.bold}>{prod.ship}</span></p>
-                                </div>
-                            </div>
-                        ))
+                        prodData?.map( (prod) => <ProductItem prod={prod}/>)
                     }
                     
                 </div>
