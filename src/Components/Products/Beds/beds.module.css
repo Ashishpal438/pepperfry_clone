@@ -1,0 +1,53 @@
+.bedContainer {
+    width: 65%;
+    margin-left: 30%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+}
+
+.bedContainer img {
+    width: 100%;
+    height: auto;
+}
+
+.bedContainer .name {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.904);
+}
+
+.bedContainer .brand {
+    font-size: 1.2em;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.bedContainer .price {
+   color: #f7510a;
+   font-size: 22px;
+    font-weight: bold;
+}
+
+.bedContainer .mrp {
+    color: #0202028a;
+    font-size: 18px;
+    text-decoration: line-through;
+}
+
+.bedContainer .discount {
+    color: #66AD5A;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.bedContainer .cashback{
+  margin-top: 7px;
+}
+
+.bedContainer .ship {
+    margin-top: 7px;
+}
+
