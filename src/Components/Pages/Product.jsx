@@ -2,6 +2,7 @@ import styles from "./Product.module.css";
 import { BsHeart } from 'react-icons/bs';
 import React, { useEffect } from "react";
 import { ProductContext } from "../../Context/ProductContext";
+import { metadata } from "../Navbar/metadata";
 
 export default function Product(){
     let {product, page} = React.useContext(ProductContext);
@@ -36,6 +37,12 @@ export default function Product(){
 
                     <div>
                         <h4>Brand</h4>
+                        <div className={styles.catego}>
+                            {
+                                metadata[product]?.brands.map( (brand) => (<div><input type="checkbox" name="sort"/><label>{brand}</label></div>) )
+                            }
+                            
+                        </div>
                     </div>
 
                     <div>
