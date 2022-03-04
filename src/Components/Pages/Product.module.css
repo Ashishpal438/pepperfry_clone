@@ -55,7 +55,15 @@
     top:0.5rem;
     right:0.5rem;
     font-size: 2rem;
+    cursor: pointer;  
+}
+.wishlisted{
+    position: absolute;
+    top:0.5rem;
+    right:0.5rem;
+    font-size: 2.2rem;
     cursor: pointer;
+    color: red;
 }
 
 .cartBtn{
@@ -76,6 +84,14 @@
     font-size: 1.1rem;
     letter-spacing: 1px;
     margin-bottom: 0.5rem;
+}
+
+.diss{
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    color: rgb(103,173,91);
 }
 
 .price{

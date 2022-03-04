@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './home.module.css'
 import { FaAngleRight, FaAngleLeft} from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
+import { ProductContext } from '../../Context/ProductContext'
 
 export const MidComponent = () => {
+    let navigate = useNavigate();
+    let {setProduct} = useContext(ProductContext);
 
    const handleClick = (arg) => {
      console.log(arg)
@@ -16,6 +20,12 @@ export const MidComponent = () => {
      }
    }
 
+   const showProduct = ( prod) => {
+    setProduct(prod);
+    navigate("/product");
+
+   }
+
 
   return (
       <>
@@ -24,7 +34,7 @@ export const MidComponent = () => {
         <h1 className={styles.heading}>Shop By Room</h1>
 
         <div className={styles.cardContainer}>
-            <div>
+            <div onClick={() => showProduct("furniture")}>
                 <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_1__2x_17022022.jpg" alt="Living Room" />
                 <p>Living Room</p>
             </div>

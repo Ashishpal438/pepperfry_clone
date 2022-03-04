@@ -4,7 +4,7 @@ export const ProductContext = React.createContext();
 
 export const ProductContextProvider = ({children}) => {
     const [product , setProduct] = React.useState("");
-    const [page, setPage] = React.useState("");
+    const [page, setPage] = React.useState("furniture");
 
     return (
         <ProductContext.Provider value={{product, setProduct, page, setPage}}>
