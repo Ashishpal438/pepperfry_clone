@@ -7,9 +7,8 @@ export const Home = () => {
   return (
     <div>
       <Navbar/>
-      <Product/>
-      {/* <MidComponent/>
-      <Footer/> */}
+      <MidComponent/>
+      <Footer/>
     </div>
   )
 }

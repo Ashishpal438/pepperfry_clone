@@ -2,6 +2,7 @@ import styles from "./Product.module.css";
 import { BsHeart } from 'react-icons/bs';
 import React, { useEffect } from "react";
 import { ProductContext } from "../../Context/ProductContext";
+import { Navbar } from '../Navbar/Navbar';
 
 export default function Product(){
     let {product, page} = React.useContext(ProductContext);
@@ -14,10 +15,12 @@ export default function Product(){
         .catch( err => console.log(err) )
     }, [])
     return (
+        <>
+        <Navbar/>
         <div >
             <div className={styles.cont}>
-                <h1 style={{textAlign: "center", marginTop: "2rem"}}>{product}</h1>
-                <h3 tyle={{textAlign: "center"}}>{page}</h3>
+                <h1 style={{textAlign: "center", marginTop: "2rem", fontSize:"3rem"}}>{product}</h1>
+                <h3 style={{textAlign: "center", marginTop: "2rem"}}>{page}</h3>
             </div>
 
             <div className={styles.main}>
@@ -82,5 +85,6 @@ export default function Product(){
                 </div>
             </div>
         </div>
+        </>
     )
 }
