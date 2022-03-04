@@ -106,14 +106,236 @@
 
 .coffee {
     margin-bottom: 0;
-    font-size: 18px;
+    font-size: 25px;
+    font-weight: 900;
 }
 .grey{
     color: rgba(0, 0, 0, 0.651);
     margin-top: 0px;
     margin-bottom: 50px;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .slider img {
     height: 400px ;
+}
+
+
+/* slider 2 */
+
+.cardContainerSlider2{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 89%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+.cardContainerSlider2 img {
+    width: 486px;
+    height: 510px;
+}
+
+
+/* view all section */
+
+.viewAllContainer {
+    background-color: #d0e4f0;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.viewAll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 89%;
+    margin: auto;
+    padding-top: 60px;
+    padding-bottom: 0px;
+}
+
+.viewAll img {
+    width: 370px;
+}
+
+.viewAll .text {
+    margin-top: 0;
+    align-self: flex-start;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.viewAll .simplep {
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.viewAll .orange {
+    color: #ff7300;
+    font-size: 25px;
+}
+
+
+/* Top brands */
+
+
+.topBrands {
+    width: 89%;
+    margin: auto;
+    margin-bottom: 60px;
+}
+
+.topBrands img {
+    width: 15.7%;
+    margin-top: 20px;
+}
+
+.topBrandsimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* .modular */
+
+.modular{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 89%;
+    margin: auto;
+    margin-bottom: 60px;
+}
+
+.modular img {
+    width: 49%;
+}
+
+
+/* more from store */
+
+.moreFromStore  {
+    background-image: url('https://ii1.pepperfry.com/images/hp_more_from_store_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 94%;
+    height: 100%;
+    margin-bottom: 60px;
+    padding-left: 100px;
+    padding-top: 45px;
+    padding-bottom: 30px;
+}
+.store {
+    display: flex;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+
+.furniture h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.furniture ul {
+    list-style-type: none;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.furniture ul li:hover {
+    cursor: pointer;
+    color: #ff5e00;
+}
+
+.furniture .upperDiv {
+    margin-bottom: 20px;
+}
+
+
+
+/* Happy Customers */
+
+
+.happyCustomers{
+    width: 89%;
+    margin: auto;
+}
+
+.happyContainers {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.happyContainers img {
+    width: 486px;
+}
+
+.happyContainers .box p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #121313;
+    margin-top: 20px;
+}
+
+.happyContainers .box h3{
+    font-size: 18px;
+    font-weight: 600;
+    color: #121313;
+    margin-top: 25px;
+}
+
+.happyContainers .box h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #858485
+}
+
+
+
+
+/* Need Help */
+
+.needHelpContainer {
+    width: 89%;
+    margin: auto;
+    padding-bottom: 60px;
+}
+
+.needHelpContainer .needHelp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.needHelp h3 {
+    color: #FE7335;
+    font-size: 25px;
+}
+
+.needHelpFlex {
+    display: flex;
+    gap: 15px;
+    border: 1px salmon;
+}
+
+.needHelpFlex img{
+    width:235px;
+    margin-bottom: 15px;
 }
