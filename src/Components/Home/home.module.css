@@ -19,7 +19,10 @@
     gap: 15px;
     width: 89%;
     margin: auto;
+    overflow: hidden;
 }
+
+
 
 .cardContainer img {
     width: 361px;
@@ -67,7 +70,59 @@
     margin-bottom: 0px !important;
 }
 
+/* Pocket */
 
+.pocket {
+    box-sizing: border-box;
+    width: 89%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.pocket h1 {
+    margin-left: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+.cardContainerSlider{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 89%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+.cardContainerSlider img {
+    width: 361px;
+}
+
+
+.cardContainerSlideLeft{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 89%;
+    margin: auto;
+    overflow: hidden;
+    margin-left: -100%;
+}
+
+.cardContainerSlideRight{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 89%;
+    margin: auto;
+    overflow: hidden;
+    margin-right: -100%;
+}
 
 .coffee {
     margin-bottom: 0;
