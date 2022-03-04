@@ -1,0 +1,188 @@
+.App {
+    text-align: left;
+    scroll-behavior: smooth;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.container {
+    width: 80vw;
+    margin: auto;
+}
+
+.first-div {
+    text-align: start;
+    font-size: small;
+    color: rgb(146, 142, 142);
+}
+
+.second-div {
+    display: flex;
+    justify-content: start;
+}
+
+ul {
+    list-style: none;
+    text-align: left;
+}
+
+.third-div-pics {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pic-latest-trends {
+    width: 24%;
+}
+
+.scroll-list {
+    height: 33vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: left;
+    list-style-type: none;
+    width: max-content;
+    list-style-type: none;
+    position: relative;
+    right: 3vw;
+    height: 40vh;
+}
+
+.ten-div-images {
+    display: flex;
+    justify-content: space-between;
+    height: 27vh;
+    margin-bottom: 13vh;
+}
+
+.ten-div-img {
+    max-width: 12.6vw;
+}
+
+.second-div-second {
+    width: 80%;
+    height: 48vh;
+    margin-bottom: 0px;
+    position: relative;
+    top: 3vh;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.third-div {
+    text-align: start;
+}
+
+.fourth-div {
+    display: flex;
+    text-align: start;
+    margin-top: 70px;
+}
+
+.fifth-div {
+    display: flex;
+    text-align: start;
+    margin-top: 70px;
+}
+
+.div-four-image1 {
+    width: 50%;
+}
+
+.div-five-image1 {
+    width: 48.5%;
+}
+
+.div-five-image1x4 {
+    width: 51.5%;
+}
+
+.div-four-image1x4 {
+    width: 50%;
+}
+
+.div-four-image1x4-1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+}
+
+.div-five-image1x4-1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+}
+
+.div-four-image1x4-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-five-image1x4-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-four-2-image {
+    width: 55%;
+    margin-left: 2.5%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+.div-five-2-image {
+    width: 55%;
+    margin-right: 2.5%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+.div-six-images-set1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15vh;
+}
+
+.div-six-images-s1img {
+    margin: auto;
+    width: 26vw;
+    height: 60vh;
+}
+
+.div-six-images-set2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blue-div-7 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.div-eighth {
+    display: flex;
+    height: 31vh;
+    justify-content: space-between;
+    margin-bottom: 8vh;
+}
+
+.Div-nine {
+    display: flex;
+    height: 32vh;
+    justify-content: space-between;
+    margin-bottom: 25vh;
+}
+
+.div-nine-img {
+    width: 26vw;
+}
+
+.grey-color {
+    color: grey;
+}
