@@ -104,26 +104,6 @@
 }
 
 
-.cardContainerSlideLeft{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    width: 89%;
-    margin: auto;
-    overflow: hidden;
-    margin-left: -100%;
-}
-
-.cardContainerSlideRight{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    width: 89%;
-    margin: auto;
-    overflow: hidden;
-    margin-right: -100%;
-}
-
 .coffee {
     margin-bottom: 0;
     font-size: 18px;
