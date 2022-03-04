@@ -1,11 +1,23 @@
 import styles from "./Product.module.css";
 import { BsHeart } from 'react-icons/bs';
+import React, { useEffect } from "react";
+import { ProductContext } from "../../Context/ProductContext";
 
 export default function Product(){
+    let {product, page} = React.useContext(ProductContext);
+    const [prodData, setProdData] = React.useState([]);
+    
+    useEffect( () => {
+        fetch(`https://pepperfry-backend1.herokuapp.com/${product}`)
+        .then( res => res.json() )
+        .then( res => setProdData(res) )
+        .catch( err => console.log(err) )
+    }, [])
     return (
         <div >
             <div className={styles.cont}>
-                <h2 style={{textAlign: "center"}}>chair</h2>
+                <h1 style={{textAlign: "center", marginTop: "2rem"}}>{product}</h1>
+                <h3 tyle={{textAlign: "center"}}>{page}</h3>
             </div>
 
             <div className={styles.main}>
@@ -48,66 +60,24 @@ export default function Product(){
                 </div>
 
                 <div className={styles.right}>
-                    <div>
-                        <div>
-                            <img width="100%" height="400px" src="https://ii2.pepperfry.com/media/catalog/product/n/e/494x544/new-york-high-back-ergonomic-chair-with-headrest-in-black-colour-by-green-soul-new-york-high-back-er-fmfcwj.jpg" />
-                            <BsHeart className={styles.wishlist}/>
-                            <button className={styles.cartBtn}>Add To Cart</button>
-                        </div>
-                        <div>
-                            <p className={styles.dis}>New York High Back Ergonomic Chair with Headrest in Black Colour</p>
-                            <p>Green Soul</p>
-                            <p className={styles.price}>$ 8, 490 <span className={styles.org}>$18,000</span></p>
-                            <p className={styles.p}>Earn cashback <span className={styles.bold}>$ 2123</span></p>
-                            <p className={styles.p}>Ships in <span className={styles.bold}>1 day</span></p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <img width="100%" height="400px" src="https://ii2.pepperfry.com/media/catalog/product/n/e/494x544/new-york-high-back-ergonomic-chair-with-headrest-in-black-colour-by-green-soul-new-york-high-back-er-fmfcwj.jpg" />
-                            <BsHeart className={styles.wishlist}/>
-                            <button className={styles.cartBtn}>Add To Cart</button>
-                        </div>
-                        <div>
-                            <p className={styles.dis}>New York High Back Ergonomic Chair with Headrest in Black Colour</p>
-                            <p>Green Soul</p>
-                            <p className={styles.price}>$ 8, 490 <span className={styles.org}>$18,000</span></p>
-                            <p className={styles.p}>Earn cashback <span className={styles.bold}>$ 2123</span></p>
-                            <p className={styles.p}>Ships in <span className={styles.bold}>1 day</span></p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <img width="100%" height="400px" src="https://ii2.pepperfry.com/media/catalog/product/n/e/494x544/new-york-high-back-ergonomic-chair-with-headrest-in-black-colour-by-green-soul-new-york-high-back-er-fmfcwj.jpg" />
-                            <BsHeart className={styles.wishlist}/>
-                            <button className={styles.cartBtn}>Add To Cart</button>
-                        </div>
-                        <div>
-                            <p className={styles.dis}>New York High Back Ergonomic Chair with Headrest in Black Colour</p>
-                            <p>Green Soul</p>
-                            <p className={styles.price}>$ 8, 490 <span className={styles.org}>$18,000</span></p>
-                            <p className={styles.p}>Earn cashback <span className={styles.bold}>$ 2123</span></p>
-                            <p className={styles.p}>Ships in <span className={styles.bold}>1 day</span></p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div>
-                            <img width="100%" height="400px" src="https://ii2.pepperfry.com/media/catalog/product/n/e/494x544/new-york-high-back-ergonomic-chair-with-headrest-in-black-colour-by-green-soul-new-york-high-back-er-fmfcwj.jpg" />
-                            <BsHeart className={styles.wishlist}/>
-                            <button className={styles.cartBtn}>Add To Cart</button>
-                        </div>
-                        <div>
-                            <p className={styles.dis}>New York High Back Ergonomic Chair with Headrest in Black Colour</p>
-                            <p>Green Soul</p>
-                            <p className={styles.price}>$ 8, 490 <span className={styles.org}>$18,000</span></p>
-                            <p className={styles.p}>Earn cashback <span className={styles.bold}>$ 2123</span></p>
-                            <p className={styles.p}>Ships in <span className={styles.bold}>1 day</span></p>
-                        </div>
-                    </div>
-
+                    {
+                        prodData?.map( (prod) => (
+                            <div>
+                                <div>
+                                    <img width="100%" height="400px" src={prod.image} />
+                                    <BsHeart className={styles.wishlist}/>
+                                    <button className={styles.cartBtn}>Add To Cart</button>
+                                </div>
+                                <div>
+                                    <p className={styles.dis}>{prod.name}</p>
+                                    <p>{prod.brand}</p>
+                                    <p className={styles.price}>$ {prod.price} <span className={styles.org}>${prod.mrp}</span></p>
+                                    <p className={styles.p}>Earn cashback <span className={styles.bold}>$ {prod.cashback}</span></p>
+                                    <p className={styles.p}>Ships in <span className={styles.bold}>{prod.ship}</span></p>
+                                </div>
+                            </div>
+                        ))
+                    }
                     
                 </div>
             </div>
