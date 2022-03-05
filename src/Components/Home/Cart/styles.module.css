@@ -1,20 +1,19 @@
 .mainCartContainer{
-    width: 500px;
+    width: 520px;
     float: right;
-    
+    border: 1px solid black;
 }
 .cartNav{
     background-color:black ;
     color: white;
-    padding: 1em;
-    padding-right: 0em;
-    padding-bottom: 0em;
+    padding-left: .5em;
 }
 .myButton{
     background-color:black;
     color: white;
     border: 0;
     height: 2em;
+    margin-top: 1em;
     padding: 1em;
     border-bottom: 1em solid black;
     font-weight: 1000;
@@ -25,4 +24,7 @@
     background-color: white;
     color: black;
     border-bottom: 1em solid white;
+}
+.cart_Input{
+    height: 2em;
 }

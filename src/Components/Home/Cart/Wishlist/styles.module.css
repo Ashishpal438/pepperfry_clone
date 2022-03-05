@@ -26,17 +26,7 @@
 .productBox{
     padding: 1em;
 }
-.cart_product_append{
-    padding: 1em;
+.rdbtn{
     display: flex;
-}
-.payment_Button{
-    border: 0;
-    height: 2em;
-    width: 490px;
-    color: white;
-    font-size: 20px;
-    font-weight: 500;
-    background-color: rgb(241,101,33);
-    
+    column-gap: 1em;
 }

@@ -30,6 +30,7 @@ function App() {
         <Route path='/sofa' element={<Sofa/>}/>
         <Route path='/product' element={<Product/>} />
      </Routes>
+     {/* <MainCart/> */}
     </div>
   );
 }

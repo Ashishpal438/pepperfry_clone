@@ -22,7 +22,7 @@ const MainCart = () => {
                         Showing Availability At  <input className={styles.cart_Input} />
                         <Button variant="text" style={{ color: 'white' }}>Check</Button>
                         <IconContext.Provider value={{ color: "white" }}>
-                            <IconButton style={{ marginLeft: "40px", marginBottom: "20px" }} >
+                            <IconButton style={{ marginLeft: "60px", marginBottom: "20px" }} >
                                 <Icon >
                                     <AiOutlineClose size={30} />
                                 </Icon>
