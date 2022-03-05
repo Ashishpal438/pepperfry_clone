@@ -19,6 +19,18 @@
     color: rgb(146, 142, 142);
 }
 
+.crousel-div1 {
+    position: relative;
+    left: 10vw;
+}
+
+.crousel {
+    background-color: aquamarine;
+    display: flex;
+    height: 100vh;
+    justify-content: space-around;
+}
+
 .second-div {
     display: flex;
     justify-content: start;
