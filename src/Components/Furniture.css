@@ -7,7 +7,9 @@
     height: 40vmin;
     pointer-events: none;
 }
-
+.img{
+    cursor:pointer;
+}
 .container {
     width: 80vw;
     margin: auto;
