@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import MainCart from './Components/Home/Cart/MainCart';
 import { Home } from './Components/Home/Home';
 import { Beds } from './Components/Products/Beds/Beds';
 import { Furniture } from './Components/Products/Furniture/Furniture';
@@ -29,6 +30,7 @@ function App() {
         <Route path='/sofa' element={<Sofa/>}/>
         <Route path='/product' element={<Product/>} />
      </Routes>
+     {/* <MainCart/> */}
     </div>
   );
 }
