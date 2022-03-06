@@ -1,8 +1,7 @@
 .mainCartContainer{
     width: 520px;
     float: right;
-    background-color: white;
-    height:100vh
+    border: 1px solid black;
 }
 .cartNav{
     background-color:black ;

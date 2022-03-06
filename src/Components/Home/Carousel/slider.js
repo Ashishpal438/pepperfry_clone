@@ -10,3 +10,4 @@ export default function slider (){
         i++;
     },3000)
 }
+ 

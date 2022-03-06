@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import MainCart from './Components/Home/Cart/MainCart';
 import { Home } from './Components/Home/Home';
 import { Beds } from './Components/Products/Beds/Beds';
 import { Lighting } from './Components/Products/Lighting/Lighting';
@@ -40,7 +41,6 @@ function App() {
         <Route path='/sofashowpage' element={<Sofa_Recliners/>} />
      </Routes>
      {/* <MainCart/> */}
-     <Footer/>
     </div>
   );
 }
