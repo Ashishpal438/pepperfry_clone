@@ -2,20 +2,17 @@ import { Typography } from '@mui/material';
 import React, { useState } from 'react';
 import styles from './styles.module.css'
 import WishlistProduct from './WishlistProduct';
-import { BsGrid3X3 } from "react-icons/bs";
-import { MdOutlineTableRows } from "react-icons/md"
-const Wishlist = ({ wishlistCount, setWishlistCount, }) => {
+const Wishlist = ({ wishlistCount, setWishlistCount }) => {
+
   const [disp, setDisp] = useState("flex")
   return (
-    <div>
+    <div className={styles.wishlist_container}>
       {
-        wishlistCount === 0 ? <div className={styles.productBox}>
+        wishlistCount > 0 ? <div className={styles.productBox}>
           <div className={styles.displayProduct}>
-            <BsGrid3X3 size={30} onClick={()=>{setDisp("grid")}}/>
-            <MdOutlineTableRows size={30} onClick={()=>{setDisp("flex")}}/>
           </div>
-          <div className={disp==="flex"?styles.productFlex:styles.productGrid}>
-          <WishlistProduct />
+          <div className={disp === "flex" ? styles.productFlex : styles.productGrid}>
+            <WishlistProduct />
           </div>
         </div> : <div className={styles.empty_cart}>
           <img className={styles.empty_cart_img} src="https://www.pepperfry.com/images/svg/empty-wishlist.svg" alt="" />

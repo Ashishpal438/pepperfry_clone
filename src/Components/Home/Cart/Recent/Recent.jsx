@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './styles.module.css'
 const Recent = ({ recentCount, setRecentCount }) => {
   return (
-    <div>
+    <div className={styles.recent_container}>
       {
         recentCount > 0 ?<>
         </> : <div className={styles.empty_cart}>
