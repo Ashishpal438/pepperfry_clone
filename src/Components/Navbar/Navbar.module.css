@@ -11,6 +11,10 @@
     height: 30px;
     text-align: justify;
 }
+.logoImg{
+    width: 200px;
+    height: 45px;
+}
 .head4{
     position: absolute;
     right: 0;

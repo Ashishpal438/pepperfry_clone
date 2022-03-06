@@ -7,10 +7,10 @@ import Carousel from './Carousel/Carousel';
 export const Home = () => {
   return (
     <div>
-      <Navbar/>
+      {/* <Navbar/> */}
       <Carousel/>
       <MidComponent/>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   )
 }
