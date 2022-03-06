@@ -127,7 +127,7 @@ export const Navbar = () => {
           {
             subMenu == "shop" ? (
               <ul className={styles.menu} >
-                <li onMouseOver={() => setMeta("furniture")} >Furniture</li>
+                <Link to={} ><li onMouseOver={() => setMeta("furniture")} >Furniture</li></Link>
                 <li onMouseOver={() => setMeta("Sofas and Recliners")} onClick={() => setPage("Sofas & Recliners")}>Sofas & Recliners</li>
                 <li onMouseOver={() => setMeta("cabinetry")} onClick={() => setPage("Cabinetry")}>Cabinetry</li>
                 <li onMouseOver={() => setMeta("beds")} onClick={() => setPage("Cabinetry")}>Beds</li>
