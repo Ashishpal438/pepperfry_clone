@@ -9,6 +9,7 @@ import MetaTab from './MetaTab';
 import SearchTab from './SearchTab';
 import { ProductContext } from '../../Context/ProductContext';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 
 import { Modal } from '@mui/material';
 import MainCart from '../Home/Cart/MainCart';
@@ -18,6 +19,8 @@ import OTP from './Login/OtpModal/otp';
 import { useNavigate } from 'react-router-dom';
 import SearchFun from './SearchFun';
 
+=======
+>>>>>>> parent of f1ba969 (login and cart page completed)
 
 
 const NavBar = styled.div`
@@ -56,9 +59,12 @@ const Li = styled.li`
 
 `;
 export const Navbar = () => {
+<<<<<<< HEAD
 
   const navigate = useNavigate();
 
+=======
+>>>>>>> parent of f1ba969 (login and cart page completed)
   let {setPage} = useContext(ProductContext);
   const [subMenu, setSubMenu] = React.useState("shop");
   const [meta, setMeta] = React.useState("");
