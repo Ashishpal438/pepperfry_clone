@@ -1,19 +1,33 @@
 import { Button, Icon, IconButton, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from './styles.module.css'
 import { AiOutlineClose } from "react-icons/ai"
 import { IconContext } from 'react-icons/lib'
 import MyCart from './MyCart/MyCart'
 import Recent from './Recent/Recent'
 import Wishlist from './Wishlist/Wishlist'
+import { ProductContext } from '../../../Context/ProductContext'
 const MainCart = () => {
-    const [cartCount, setCartCount] = useState(0);
-    const [wishlistCount, setWishlistCount] = useState(0);
-    const [recentCount, setRecentCount] = useState(0);
-    const [display, setDisplay] = useState("");
+    const {cartCount,setCartCount,wishlistCount,setWishlistCount,recentCount,setRecentCount,display, setDisplay,setWishlist,setCart} = React.useContext(ProductContext);
     const hanldeComponent=(arg)=>{
         setDisplay(arg)
     }
+    useEffect(()=>{
+        fetch("https://pepperfry-backend1.herokuapp.com/cart")
+        .then((res)=>res.json())
+        .then((res)=>{
+            setCartCount(res.length)
+            setCart(res);
+            })
+        .catch((err)=>console.log(err))
+        fetch("https://pepperfry-backend1.herokuapp.com/wishlist")
+            .then((res) => res.json())
+            .then((res) => {
+                setWishlistCount(res.length)
+                setWishlist(res);
+            })
+            .catch((err) => console.log(err))
+    },[])
     return (
         <div className={styles.mainCartContainer}>
             <div className={styles.cartNav}>
@@ -39,7 +53,7 @@ const MainCart = () => {
                 </div>
             </div>
             <div className={styles.cart_component}>
-                {display==="mycart"?<MyCart cartCount={cartCount} setCartCount={setCartCount}/>:display==="recent"?<Recent recentCount={recentCount} setRecentCount={setRecentCount}/>:display==="wishlist"?<Wishlist wishlistCount={wishlistCount} setWishlistCount={setWishlistCount}/>:""}
+                {display==="mycart"?<MyCart cartCount={cartCount} setCartCount={setCartCount}/>:display==="recent"?<Recent recentCount={recentCount} setRecentCount={setRecentCount}/>:display==="wishlist"?<Wishlist wishlistCount={wishlistCount} setWishlistCount={setWishlistCount}/>:<></>}
             </div>
         </div>
     )

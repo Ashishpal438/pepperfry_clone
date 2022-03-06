@@ -2,9 +2,10 @@
     background-color: white;
     border: 2px solid orange;
     color: orange;
-    padding: .5em 2.8em .5em;
+    padding: .5em 2em .5em;
     font-size: large;
     margin-top: 1em;
+    bottom: 1;
     }
 .empty_cart{
      padding-top: 10em;
@@ -31,6 +32,8 @@
     display: flex;
 }
 .payment_Button{
+    position: fixed;
+    bottom: 0;
     border: 0;
     height: 2em;
     width: 490px;
@@ -38,5 +41,8 @@
     font-size: 20px;
     font-weight: 500;
     background-color: rgb(241,101,33);
-    
+    margin-bottom:1em ;
+}
+.payment_Button:hover{
+    cursor: pointer;
 }

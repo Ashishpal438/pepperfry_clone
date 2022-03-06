@@ -1,19 +1,13 @@
 import {  Typography } from '@mui/material'
 import React,{ useState } from 'react'
-import { BsGrid3X3 } from 'react-icons/bs'
-import { MdOutlineTableRows } from 'react-icons/md'
 import ProductAppend from './ProductAppend'
 import styles from './styles.module.css'
 const MyCart = ({cartCount,setCartCount}) => {
   
   return (
-    <div>
+    <div className={styles.my_cart}>
       {
-        cartCount=== 0 ? <div className={styles.productBox}>
-        {/* <div className={styles.displayProduct}>
-          <BsGrid3X3 size={30} sx={{cursor:"pointer"}} onClick={()=>{setDisp("grid")}}/>
-          <MdOutlineTableRows size={30} onClick={()=>{setDisp("flex")}}/>
-        </div> */}
+        cartCount>0 ? <div className={styles.productBox}>
         <div>
         <ProductAppend/>
         </div>

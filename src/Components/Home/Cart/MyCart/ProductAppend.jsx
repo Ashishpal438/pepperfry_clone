@@ -2,27 +2,20 @@ import { Box, Button, Card, CardContent, CardMedia, Typography } from '@mui/mate
 import React from 'react'
 import styles from './styles.module.css';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import { ProductContext } from '../../../../Context/ProductContext';
 const ProductAppend = ({ product_img, product_name, product_Offerprice, product_price }) => {
-    const data = {
-        "id": "1",
-        "name": "Tito Entertainment Unit in Natural Colour and Slate Grey Finish",
-        "image": "https://ii2.pepperfry.com/media/catalog/product/t/i/494x544/tito-entertainment-unit-in-in-slate-grey-colour---casacraft-by-pepperfry-tito-entertainment-unit-in--ox1dyl.jpg",
-        "brand": "CasaCraft",
-        "price": "24500",
-        "mrp": "39,999",
-        "discount": "39%",
-        "cashback": "1800",
-        "ship": "1 day"
-    }
+    const {cart,setCart}=React.useContext(ProductContext);
+    console.log(cart)
     return (
         <div>
 
-
-<div className={styles.cart_product_append}>
-                <Card sx={{ display: 'flex', width: '500px'}}>
+            {cart.map((data)=>{
+                return(
+            <div className={styles.cart_product_append}>
+                <Card sx={{ display: 'flex', width: '500px' }}>
                     <CardMedia
                         component="img"
-                        sx={{ width: 151}}
+                        sx={{ width: 151 }}
                         image={data.image}
                         alt=""
                     />
@@ -42,14 +35,15 @@ const ProductAppend = ({ product_img, product_name, product_Offerprice, product_
                             <Typography>
                                 <p style={{ border: "1px dashed black", width: "fit-content", fontStyle: "italic" }}>Use Coupon WOW To Avail Offer Price</p>
                             </Typography>
-                             <div>
+                            <div>
                                 <Button>Move to Wishlist</Button><Button>Remove</Button>
                             </div>
                         </CardContent>
                     </Box>
 
                 </Card>
-            </div>
+            </div>)
+            })}
             <button className={styles.payment_Button}>Proceed To Pay Securely</button>
         </div>
     )
