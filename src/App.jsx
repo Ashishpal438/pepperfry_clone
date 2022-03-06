@@ -11,8 +11,8 @@ import { Decor } from './Components/Products/Decor/Decor';
 import {Cabinetry} from './Components/Products/Cabinetry/Cabinetry';
 import {Applainces} from './Components/Products/Applainces/Applainces';
 import Product from './Components/Pages/Product';
-import Sofa_Recliners from './Components/Sofa_Recliners'; 
-import  Furniture  from './Components/Furniture';
+// import Sofa_Recliners from './Components/Sofa_Recliners'; 
+// import  Furniture  from './Components/Furniture';
 
 
 import "slick-carousel/slick/slick.css";
@@ -37,8 +37,8 @@ function App() {
         <Route path='/matress' element={<Mattress/>} />
         <Route path='/sofa' element={<Sofa/>}/>
         <Route path='/product' element={<Product/>} />
-        <Route path='/furnitureshowpage' element={<Furniture/>} />
-        <Route path='/sofashowpage' element={<Sofa_Recliners/>} />
+        {/* <Route path='/furnitureshowpage' element={<Furniture/>} />
+        <Route path='/sofashowpage' element={<Sofa_Recliners/>} /> */}
      </Routes>
      {/* <MainCart/> */}
      <Footer/>

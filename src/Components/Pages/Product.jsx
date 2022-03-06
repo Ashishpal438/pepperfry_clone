@@ -30,6 +30,7 @@ export default function Product(){
     console.log("product", product, prodData)
     return (
         <>
+        <Navbar/>
         <div >
             <div className={styles.cont}>
                 <h1 style={{textAlign: "center", marginTop: "2rem", fontSize:"3rem"}}>{product}</h1>
