@@ -9,6 +9,7 @@ import MetaTab from './MetaTab';
 import SearchTab from './SearchTab';
 import { ProductContext } from '../../Context/ProductContext';
 import { Link } from 'react-router-dom';
+import SearchFun from './SearchFun';
 
 
 const NavBar = styled.div`
@@ -52,20 +53,33 @@ export const Navbar = () => {
   const [meta, setMeta] = React.useState("");
   const [searchKey, setSearchKey] = React.useState("");
   const [search, setSearch] = React.useState(false);
+  const [searchOption, setSearchOption] = React.useState(false);
   const [loginVis, setLoginVis] = React.useState(false);
 
   const cancleMeta = () => {
     setMeta("");
   }
 
-  const handleEnter = (e) => {
-    if(e.key === 'Enter'){
-      console.log("ertyuiop", searchKey)
-    }
-  }
+  // const handleEnter = (e) => {
+  //   if(e.key === 'Enter'){
+  //     console.log("ertyuiop", searchKey)
+  //   }
+  // }
 
   const handleRemoveSearch = () => {
     setSearch(false)
+  }
+
+  const handleChange = (e) => {
+    console.log("Search", search)
+    setSearchKey(e.target.value)
+    setSearch(false)
+    setSearchOption(true);
+  }
+
+  const handleEmpty = () => {
+    setSearchOption(false);
+    setSearch(true);
   }
   return (
     <>
@@ -81,9 +95,10 @@ export const Navbar = () => {
                 </ul>
               {/* </div> */}
               <div className={styles.search}>
-                <input type="text" placeholder="Door to happiness begins with a Search" value={searchKey} onChange={(e) => setSearchKey(e.target.value)} onKeyPress={handleEnter} onClick={() => setSearch(true)} />
+                <input type="text" placeholder="Door to happiness begins with a Search" value={searchKey} onChange={(e) => handleChange(e)} onClick={() => setSearch(true)} />
                 <FiSearch className={styles.icon}/>
               </div>
+              {searchOption && <SearchFun word={searchKey} setSearchOption={handleEmpty}/>}
               {search && <SearchTab handleRemoveSearch={handleRemoveSearch}/>}
             </div>
           </LeftNav>

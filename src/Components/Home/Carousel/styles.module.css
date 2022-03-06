@@ -1,0 +1,14 @@
+.mainCarousel{
+    padding: 5.5%;
+    padding-top: 0;
+}
+.Carousel{
+display: grid;
+grid-template-columns: 3fr 1fr;
+column-gap: 1em;
+margin-bottom:3em;
+}
+.SliderCarousel{
+    display: flex;
+    overflow: hidden;
+}

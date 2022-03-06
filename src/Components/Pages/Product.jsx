@@ -15,13 +15,17 @@ export default function Product(){
     const [sortBetween, setSortBetween] = useState("");
     
     
+    const [loading, setLoading] = React.useState(true);
+    
     useEffect( () => {
-        console.log("Product page",sortBetween);
+        setLoading(true)
         fetch(`https://pepperfry-backend1.herokuapp.com/${product}?_sort=${sort}${sortBetween}`)
         .then( res => res.json() )
-        .then( res => setProdData(res) )
+        .then( res => {
+            setLoading(false)
+            setProdData(res) } )
         .catch( err => console.log(err) )
-    }, [sort,sortBetween])
+    }, [sort,sortBetween,product])
 
     console.log("product", product, prodData)
     return (
@@ -71,7 +75,10 @@ export default function Product(){
 
                 <div className={styles.right}>
                     {
-                        prodData?.map( (prod) => <ProductItem prod={prod}/>)
+                        loading ? <img src="/loading.gif" alt="loading" width="200px" height="200px"  style={{margin: "200px auto"}}/> :
+                        (
+                            prodData?.map( (prod) => <ProductItem prod={prod}/>)
+                        )
                     }
                     
                 </div>
