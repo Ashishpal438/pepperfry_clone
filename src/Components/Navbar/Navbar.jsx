@@ -14,6 +14,7 @@ import MainCart from '../Home/Cart/MainCart';
 import SignUp from './Login/SignUpModal/signup';
 import LogIn from './Login/LoginModal/login';
 import OTP from './Login/OtpModal/otp';
+import SearchFun from './SearchFun';
 
 
 const NavBar = styled.div`
@@ -57,6 +58,7 @@ export const Navbar = () => {
   const [meta, setMeta] = React.useState("");
   const [searchKey, setSearchKey] = React.useState("");
   const [search, setSearch] = React.useState(false);
+  const [searchOption, setSearchOption] = React.useState(false);
   const [loginVis, setLoginVis] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const {disp_change,loginModal,logInopen, setLogInOpen,handleloginClose,handleLoginOpen}=useContext(ProductContext)
@@ -71,33 +73,46 @@ export const Navbar = () => {
     setMeta("");
   }
 
-  const handleEnter = (e) => {
-    if (e.key === 'Enter') {
-      console.log("ertyuiop", searchKey)
-    }
-  }
+  // const handleEnter = (e) => {
+  //   if(e.key === 'Enter'){
+  //     console.log("ertyuiop", searchKey)
+  //   }
+  // }
 
   const handleRemoveSearch = () => {
     setSearch(false)
   }
+
+  const handleChange = (e) => {
+    console.log("Search", search)
+    setSearchKey(e.target.value)
+    setSearch(false)
+    setSearchOption(true);
+  }
+
+  const handleEmpty = () => {
+    setSearchOption(false);
+    setSearch(true);
+  }
   return (
     <>
       <NavBar >
-        <div style={{ display: "flex" }}>
+        <div style={{display:"flex"}} onMouseEnter={() => setMeta("")}>
           <LeftNav>
-            <div style={{ display: "flex" }}>
-              <Link to="/"><img src="/pepperfry-logo.png" width="200px" height="45px" alt='' /></Link>
-              <ul className={styles.menu}>
-                <Li selected="shop" subMenu={subMenu} onMouseOver={() => setSubMenu("shop")}>SHOP</Li>
-                <Li selected="inspired" subMenu={subMenu} onMouseOver={() => setSubMenu("inspired")} >GET INSPIRED</Li>
-                <Li selected="partner" subMenu={subMenu} onMouseOver={() => setSubMenu("partner")} >PARTNER</Li>
-              </ul>
+            <div style={{display:"flex"}}>
+              <Link to="/"><img src="/pepperfry-logo.png" className={styles.logoImg}/></Link>
+                <ul className={styles.menu}>
+                  <Li selected="shop" subMenu={subMenu} onMouseOver={() => setSubMenu("shop")}>SHOP</Li>
+                  <Li selected="inspired" subMenu={subMenu} onMouseOver={() => setSubMenu("inspired")} >GET INSPIRED</Li>
+                  <Li selected="partner" subMenu={subMenu} onMouseOver={() => setSubMenu("partner")} >PARTNER</Li>
+                </ul>
               {/* </div> */}
               <div className={styles.search}>
-                <input type="text" placeholder="Door to happiness begins with a Search" value={searchKey} onChange={(e) => setSearchKey(e.target.value)} onKeyPress={handleEnter} onClick={() => setSearch(true)} />
-                <FiSearch className={styles.icon} />
+                <input type="text" placeholder="Door to happiness begins with a Search" value={searchKey} onChange={(e) => handleChange(e)} onClick={() => setSearch(true)} />
+                <FiSearch className={styles.icon}/>
               </div>
-              {search && <SearchTab handleRemoveSearch={handleRemoveSearch} />}
+              {searchOption && <SearchFun word={searchKey} setSearchOption={handleEmpty}/>}
+              {search && <SearchTab handleRemoveSearch={handleRemoveSearch}/>}
             </div>
           </LeftNav>
 

@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    width: 10%;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    list-style: none;
+    position: fixed;
+    top: 80vh;
+    left: 90vw;
+}
+
+li {
+    cursor: pointer;
+}
+
+.icon {
+    width: 4vw;
+    height: 8vh;
+}
