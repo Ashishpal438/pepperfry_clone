@@ -9,13 +9,17 @@ import ProductItem from "./ProductItem";
 export default function Product(){
     let {product, page} = React.useContext(ProductContext);
     const [prodData, setProdData] = React.useState([]);
+    const [loading, setLoading] = React.useState(true);
     
     useEffect( () => {
+        setLoading(true)
         fetch(`https://pepperfry-backend1.herokuapp.com/${product}`)
         .then( res => res.json() )
-        .then( res => setProdData(res) )
+        .then( res => {
+            setLoading(false)
+            setProdData(res) } )
         .catch( err => console.log(err) )
-    }, [])
+    }, [product])
 
     console.log("product", product, prodData)
     return (
@@ -65,7 +69,10 @@ export default function Product(){
 
                 <div className={styles.right}>
                     {
-                        prodData?.map( (prod) => <ProductItem prod={prod}/>)
+                        loading ? <img src="/loading.gif" alt="loading" width="200px" height="200px"  style={{margin: "200px auto"}}/> :
+                        (
+                            prodData?.map( (prod) => <ProductItem prod={prod}/>)
+                        )
                     }
                     
                 </div>
