@@ -24,7 +24,7 @@ export default function SearchTab({handleRemoveSearch}){
                     <li onClick={() => showProduct("furnishing")}>table</li>
                     <li onClick={() => showProduct("cabinetry")}>cabinetry</li>
                     <li onClick={() => showProduct("furnishing")}>shoe rack</li>
-                    <li onClick={() => showProduct("bed")}>Bed</li>
+                    <li onClick={() => showProduct("beds")}>Bed</li>
                     <li onClick={() => showProduct("lighting")}>lighting</li>
                     <li onClick={() => showProduct("decor")}>decor</li>
                 </ul>

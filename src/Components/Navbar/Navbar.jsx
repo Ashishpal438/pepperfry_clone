@@ -84,7 +84,7 @@ export const Navbar = () => {
   return (
     <>
       <NavBar >
-        <div style={{display:"flex"}}>
+        <div style={{display:"flex"}} onMouseEnter={() => setMeta("")}>
           <LeftNav>
             <div style={{display:"flex"}}>
               <Link to="/"><img src="/pepperfry-logo.png" width="200px" height="45px"/></Link>
