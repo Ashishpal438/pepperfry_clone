@@ -1,0 +1,19 @@
+.continueButton{
+    background-color: white;
+    border: 2px solid orange;
+    color: orange;
+    padding: .5em 2.8em .5em;
+    font-size: large;
+    margin-top: 1em;
+    }
+.empty_cart{
+     padding-top: 10em;
+     text-align: center;
+     margin-left: 25%;
+     margin-right: 25%;
+    }
+.empty_cart_img{
+        margin-bottom: 1em;
+        height:100%;
+        width: 7em;
+}
