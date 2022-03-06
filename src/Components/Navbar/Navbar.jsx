@@ -9,15 +9,12 @@ import MetaTab from './MetaTab';
 import SearchTab from './SearchTab';
 import { ProductContext } from '../../Context/ProductContext';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
 import SearchFun from './SearchFun';
-=======
 import { Modal } from '@mui/material';
 import MainCart from '../Home/Cart/MainCart';
 import SignUp from './Login/SignUpModal/signup';
 import LogIn from './Login/LoginModal/login';
 import OTP from './Login/OtpModal/otp';
->>>>>>> b332a092ca2f257226c1350b4e0b59a2fc74a5d5
 
 
 const NavBar = styled.div`
@@ -56,11 +53,7 @@ const Li = styled.li`
 
 `;
 export const Navbar = () => {
-<<<<<<< HEAD
-  let {setPage} = useContext(ProductContext);
-=======
   let { setPage } = useContext(ProductContext);
->>>>>>> b332a092ca2f257226c1350b4e0b59a2fc74a5d5
   const [subMenu, setSubMenu] = React.useState("shop");
   const [meta, setMeta] = React.useState("");
   const [searchKey, setSearchKey] = React.useState("");
@@ -93,15 +86,6 @@ export const Navbar = () => {
       <NavBar >
         <div style={{ display: "flex" }}>
           <LeftNav>
-<<<<<<< HEAD
-            <div style={{display:"flex"}}>
-              <Link to="/"><img src="/pepperfry-logo.png" className={styles.logoImg}/></Link>
-                <ul className={styles.menu}>
-                  <Li selected="shop" subMenu={subMenu} onMouseOver={() => setSubMenu("shop")}>SHOP</Li>
-                  <Li selected="inspired" subMenu={subMenu} onMouseOver={() => setSubMenu("inspired")} >GET INSPIRED</Li>
-                  <Li selected="partner" subMenu={subMenu} onMouseOver={() => setSubMenu("partner")} >PARTNER</Li>
-                </ul>
-=======
             <div style={{ display: "flex" }}>
               <Link to="/"><img src="/pepperfry-logo.png" width="200px" height="45px" alt='' /></Link>
               <ul className={styles.menu}>
@@ -109,7 +93,6 @@ export const Navbar = () => {
                 <Li selected="inspired" subMenu={subMenu} onMouseOver={() => setSubMenu("inspired")} >GET INSPIRED</Li>
                 <Li selected="partner" subMenu={subMenu} onMouseOver={() => setSubMenu("partner")} >PARTNER</Li>
               </ul>
->>>>>>> b332a092ca2f257226c1350b4e0b59a2fc74a5d5
               {/* </div> */}
               <div className={styles.search}>
                 <input type="text" placeholder="Door to happiness begins with a Search" value={searchKey} onChange={(e) => setSearchKey(e.target.value)} onKeyPress={handleEnter} onClick={() => setSearch(true)} />
@@ -166,11 +149,7 @@ export const Navbar = () => {
                 <li onMouseOver={() => setMeta("lighting")} onClick={() => setPage("Lighting")}>Lighting</li>
                 <li onMouseOver={() => setMeta("appliances")} onClick={() => setPage("Appliances")}>Appliances</li>
                 <li onMouseOver={() => setMeta("modular")} onClick={() => setPage("Modular")}>Modular</li>
-<<<<<<< HEAD
-            </ul>
-=======
               </ul>
->>>>>>> b332a092ca2f257226c1350b4e0b59a2fc74a5d5
             ) : subMenu == "inspired" ? (
               <ul className={styles.menu}>
                 <li>Ideas</li>

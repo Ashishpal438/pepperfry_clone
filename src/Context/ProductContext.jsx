@@ -30,10 +30,11 @@ export const ProductContextProvider = ({children}) => {
 
             .then((r) => r.json())
             .then((d) => {
+                console.log("d",d)
                 for (var i = 0; i < d.length; i++) {
                     var obj = d[i]
-                    console.log(obj.email)
-                    if (obj.email === email && obj.password === password) {
+                    console.log("obj email",obj.email,"email enterd",email)
+                    if (obj.email === email) {
                         setAuth(true)
                         return
                     }

@@ -13,11 +13,8 @@ import {Cabinetry} from './Components/Products/Cabinetry/Cabinetry';
 import {Applainces} from './Components/Products/Applainces/Applainces';
 import Product from './Components/Pages/Product';
 
-<<<<<<< HEAD
-=======
 import { Navbar } from './Components/Navbar/Navbar';
 import { Footer } from './Components/Footer/Footer';
->>>>>>> b332a092ca2f257226c1350b4e0b59a2fc74a5d5
 
 function App() {
   return (

@@ -43,7 +43,7 @@ const LogIn = () => {
                     <img src="https://ii1.pepperfry.com/images/new_login_modal_bg_2020.jpg" alt="" srcset="" />
                     <div>
                         <div className={styles.login_form} >
-                            <CssTextField id="standard-basic" type="email" label="User email" variant="standard"
+                        <CssTextField id="standard-basic" type="email" label="User email" variant="standard"
                                 value={userMail}
                                 onKeyPress={(e) => {
                                     console.log(e);
