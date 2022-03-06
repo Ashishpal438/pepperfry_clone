@@ -10,6 +10,7 @@ import SearchTab from './SearchTab';
 import { ProductContext } from '../../Context/ProductContext';
 import { Link } from 'react-router-dom';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Modal } from '@mui/material';
 import MainCart from '../Home/Cart/MainCart';
 import SignUp from './Login/SignUpModal/signup';
@@ -17,6 +18,8 @@ import LogIn from './Login/LoginModal/login';
 import OTP from './Login/OtpModal/otp';
 import {Link, useNavigate } from 'react-router-dom';
 import SearchFun from './SearchFun';
+=======
+>>>>>>> parent of f1ba969 (login and cart page completed)
 =======
 >>>>>>> parent of f1ba969 (login and cart page completed)
 
@@ -58,10 +61,13 @@ const Li = styled.li`
 `;
 export const Navbar = () => {
 <<<<<<< HEAD
+<<<<<<< HEAD
   let { setPage } = useContext(ProductContext);
 
   const navigate = useNavigate();
 
+=======
+>>>>>>> parent of f1ba969 (login and cart page completed)
 =======
 >>>>>>> parent of f1ba969 (login and cart page completed)
   let {setPage} = useContext(ProductContext);
