@@ -1,0 +1,38 @@
+.signUp_main_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2em;
+}
+.register_btn{
+    height: 3.5em;
+    background-color:#e75a16; 
+    color: white;
+    font-weight: 600;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: .813rem;
+    letter-spacing: 1px;
+    border: 0;
+    margin: 1em;
+    margin-left: 0;
+}
+.goto_login_btn{
+    height: 3.5em;
+    background-color: white; 
+    color: #e75a16;
+    font-weight: 600;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: .813rem;
+    letter-spacing: 1px;
+    border: 1px solid #e75a16;
+    border-radius: 2px;
+    margin: 1em;
+    margin-left: 0;
+}
+.input_form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    
+}
