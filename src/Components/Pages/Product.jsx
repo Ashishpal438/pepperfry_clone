@@ -9,17 +9,23 @@ import ProductItem from "./ProductItem";
 export default function Product(){
     let {product, page} = React.useContext(ProductContext);
     const [prodData, setProdData] = React.useState([]);
+
+    // sorting the data
+    const [sort, setSort] = useState("");
+    const [sortBetween, setSortBetween] = useState("");
+    
+    
     const [loading, setLoading] = React.useState(true);
     
     useEffect( () => {
         setLoading(true)
-        fetch(`https://pepperfry-backend1.herokuapp.com/${product}`)
+        fetch(`https://pepperfry-backend1.herokuapp.com/${product}?_sort=${sort}${sortBetween}`)
         .then( res => res.json() )
         .then( res => {
             setLoading(false)
             setProdData(res) } )
         .catch( err => console.log(err) )
-    }, [product])
+    }, [sort,sortBetween,product])
 
     console.log("product", product, prodData)
     return (
@@ -37,11 +43,11 @@ export default function Product(){
                         <h4>Sort by</h4>
 
                         <div className={styles.catego}>
-                            <div><input type="radio" name="sort"/><label>Relevance</label></div>
-                            <div><input type="radio" name="sort"/><label>Highest Priced First</label></div>
-                            <div><input type="radio" name="sort"/><label>Lowest Priced Firs</label></div>
-                            <div><input type="radio" name="sort"/><label>Fastest Shipping</label></div>
-                            <div><input type="radio" name="sort"/><label>Newest</label></div>
+                            <div><input type="radio" name="sort" defaultChecked={true} onClick={() => setSort('')}/><label>Relevance</label></div>
+                            <div><input type="radio" name="sort" onClick={() => setSort('price&_order=desc')} /><label>Highest Priced First</label></div>
+                            <div><input type="radio" name="sort" onClick={() => setSort('price&_order=asc')} /><label>Lowest Priced First</label></div>
+                            <div><input type="radio" name="sort" onClick={() => setSort('cashback&_order=desc')} /><label>Highest cashback</label></div>
+                            <div><input type="radio" name="sort" onClick={() => setSort('id&_order=desc')} /><label>Newest</label></div>
                         </div>
                     </div>
 
@@ -58,9 +64,9 @@ export default function Product(){
                     <div>
                         <h4>Price</h4>
                         <div className={styles.catego}>
-                            <div><input type="checkbox" name="sort"/><label>Under 5,000</label></div>
-                            <div><input type="checkbox" name="sort"/><label>5,000 to 10,000</label></div>
-                            <div><input type="checkbox" name="sort"/><label>10,000 to 15,000</label></div>
+                            <div><input type="checkbox" name="sort" onClick={() => setSortBetween( sortBetween + '&price_lte=15000')} /><label>Under 15,000</label></div>
+                            <div><input type="checkbox" name="sort" onClick={() => setSortBetween(sortBetween + '&price_gte=15000&price_lte=40000')} /><label>15,000 to 40,000</label></div>
+                            <div><input type="checkbox" name="sort" onClick={() => setSortBetween( sortBetween + '&price_gte=40000&price_lte=65000')} /><label>40,000 to 65,000</label></div>
                         </div>
                     </div>
 
