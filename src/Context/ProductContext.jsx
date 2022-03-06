@@ -2,8 +2,8 @@ import React from "react";
 
 export const ProductContext = React.createContext();
 
-export const ProductContextProvider = ({ children }) => {
-    const [product, setProduct] = React.useState("");
+export const ProductContextProvider = ({children}) => {
+    const [product , setProduct] = React.useState("");
     const [page, setPage] = React.useState("furniture");
     const [display, setDisplay] = React.useState("")
     const [cartCount, setCartCount] = React.useState(0);
