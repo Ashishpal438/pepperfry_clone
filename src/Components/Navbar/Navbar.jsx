@@ -87,7 +87,7 @@ export const Navbar = () => {
         <div style={{display:"flex"}} onMouseEnter={() => setMeta("")}>
           <LeftNav>
             <div style={{display:"flex"}}>
-              <Link to="/"><img src="/pepperfry-logo.png" width="200px" height="45px"/></Link>
+              <Link to="/"><img src="/pepperfry-logo.png" className={styles.logoImg}/></Link>
                 <ul className={styles.menu}>
                   <Li selected="shop" subMenu={subMenu} onMouseOver={() => setSubMenu("shop")}>SHOP</Li>
                   <Li selected="inspired" subMenu={subMenu} onMouseOver={() => setSubMenu("inspired")} >GET INSPIRED</Li>
