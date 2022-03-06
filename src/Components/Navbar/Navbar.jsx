@@ -14,6 +14,7 @@ import MainCart from '../Home/Cart/MainCart';
 import SignUp from './Login/SignUpModal/signup';
 import LogIn from './Login/LoginModal/login';
 import OTP from './Login/OtpModal/otp';
+import {Link, useNavigate } from 'react-router-dom';
 import SearchFun from './SearchFun';
 
 
@@ -40,7 +41,7 @@ const Li = styled.li`
   margin-right: 3rem;
   cursor: pointer;
 
-  ${props => props.selected == props.subMenu ?
+  ${props => props.selected === props.subMenu ?
     ({
       color: "black",
       fontWeight: "bolder",
@@ -54,6 +55,10 @@ const Li = styled.li`
 `;
 export const Navbar = () => {
   let { setPage } = useContext(ProductContext);
+
+  const navigate = useNavigate();
+
+  let {setPage} = useContext(ProductContext);
   const [subMenu, setSubMenu] = React.useState("shop");
   const [meta, setMeta] = React.useState("");
   const [searchKey, setSearchKey] = React.useState("");
@@ -96,11 +101,11 @@ export const Navbar = () => {
   }
   return (
     <>
-      <NavBar >
+      <Navbar >
         <div style={{display:"flex"}} onMouseEnter={() => setMeta("")}>
           <LeftNav>
             <div style={{display:"flex"}}>
-              <Link to="/"><img src="/pepperfry-logo.png" className={styles.logoImg}/></Link>
+              <Link to="/"><img src="/pepperfry-logo.png" className={styles.logoImg} alt='img'/></Link>
                 <ul className={styles.menu}>
                   <Li selected="shop" subMenu={subMenu} onMouseOver={() => setSubMenu("shop")}>SHOP</Li>
                   <Li selected="inspired" subMenu={subMenu} onMouseOver={() => setSubMenu("inspired")} >GET INSPIRED</Li>
@@ -151,10 +156,13 @@ export const Navbar = () => {
         <div className={styles.heading} style={{ display: "flex", position: "relative" }} onMouseLeave={() => setSubMenu("shop")} >
 
           {
-            subMenu == "shop" ? (
+            subMenu === "shop" ? (
               <ul className={styles.menu} >
-                <li onMouseOver={() => setMeta("furniture")} >Furniture</li>
-                <li onMouseOver={() => setMeta("Sofas and Recliners")} onClick={() => setPage("Sofas & Recliners")}>Sofas & Recliners</li>
+                <li onClick={() => navigate('/furnitureshowpage')} onMouseOver={() => setMeta("furniture")} >Furniture</li>
+                <li onMouseOver={() => setMeta("Sofas and Recliners")} onClick={() => { 
+                  setPage("Sofas & Recliners")
+                 navigate('/sofashowpage')} 
+                }>Sofas & Recliners</li>
                 <li onMouseOver={() => setMeta("cabinetry")} onClick={() => setPage("Cabinetry")}>Cabinetry</li>
                 <li onMouseOver={() => setMeta("beds")} onClick={() => setPage("Cabinetry")}>Beds</li>
                 <li onMouseOver={() => setMeta("mattresses")} onClick={() => setPage("Mattresses")}>Mattresses</li>
@@ -165,29 +173,9 @@ export const Navbar = () => {
                 <li onMouseOver={() => setMeta("modular")} onClick={() => setPage("Modular")}>Modular</li>
               </ul>
             ) : subMenu == "inspired" ? (
-              <ul className={styles.menu}>
-                <li>Ideas</li>
-                <li>Buying Guides</li>
-                <li>Visit Studios</li>
+            
 
-              </ul>
-            ) :
-              (
-                <ul className={styles.menu}>
-                  <li>Sell on Pepperfry</li>
-                  <li>Become a Franchise</li>
-                  <li>Place Bulk Orders</li>
-                  <li>Join Us As Design Partner</li>
-                  <li>Careers</li>
-
-                </ul>
-              )
-          }
-
-          <h4 className={styles.head4}>Need Help?</h4>
-        </div>
-
-      </NavBar>
+      </Navbar>
 
       {meta && <MetaTab currentSubMenu={meta} cancleMeta={cancleMeta} />}
     </>
