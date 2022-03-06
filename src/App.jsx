@@ -15,9 +15,9 @@ import Product from './Components/Pages/Product';
 // import  Furniture  from './Components/Furniture';
 
 
-import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick.css";
 
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick-theme.css";
 import { Navbar } from './Components/Navbar/Navbar';
 import { Footer } from './Components/Footer/Footer';
 
