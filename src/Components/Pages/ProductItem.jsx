@@ -23,9 +23,9 @@ export default function ProductItem({ prod }) {
                     handleWishlist(prod)
                 }
                 } />}
-                {showCartBtn && <button className={styles.cartBtn} onClick={() => {
-                    handleOpencart("mycart");
-                    handleCart(prod)
+                {showCartBtn && <button className={styles.cartBtn} onClick={async () => {
+                    await handleCart(prod);
+                    handleOpencart("mycart");                  
                 }}>Add To Cart</button>}
             </div>
             <div>

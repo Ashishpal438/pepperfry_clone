@@ -7,6 +7,7 @@ import { BsHeart } from 'react-icons/bs';
 import { HiOutlineUser } from 'react-icons/hi';
 import MetaTab from './MetaTab';
 import SearchTab from './SearchTab';
+import SearchFun from './SearchFun';
 import { ProductContext } from '../../Context/ProductContext';
 import { Link } from 'react-router-dom';
 import { Modal } from '@mui/material';
@@ -57,6 +58,7 @@ export const Navbar = () => {
   const [meta, setMeta] = React.useState("");
   const [searchKey, setSearchKey] = React.useState("");
   const [search, setSearch] = React.useState(false);
+  const [searchOption, setSearchOption] = React.useState(false);
   const [loginVis, setLoginVis] = React.useState(false);
   const { disp_change, loginModal, logInopen, setLogInOpen, handleloginClose, handleLoginOpen, opencart, setOpencart
 ,handleClosecart,handleOpencart}=useContext(ProductContext)
@@ -65,10 +67,22 @@ export const Navbar = () => {
     setMeta("");
   }
 
-  const handleEnter = (e) => {
-    if (e.key === 'Enter') {
-      console.log("ertyuiop", searchKey)
-    }
+  // const handleEnter = (e) => {
+  //   if (e.key === 'Enter') {
+  //     console.log("ertyuiop", searchKey)
+  //   }
+  // }
+
+  const handleChange = (e) => {
+    console.log("Search", search)
+    setSearchKey(e.target.value)
+    setSearch(false)
+    setSearchOption(true);
+  }
+
+  const handleEmpty = () => {
+    setSearchOption(false);
+    setSearch(true);
   }
 
   const handleRemoveSearch = () => {
@@ -88,9 +102,10 @@ export const Navbar = () => {
               </ul>
               {/* </div> */}
               <div className={styles.search}>
-                <input type="text" placeholder="Door to happiness begins with a Search" value={searchKey} onChange={(e) => setSearchKey(e.target.value)} onKeyPress={handleEnter} onClick={() => setSearch(true)} />
+              <input type="text" placeholder="Door to happiness begins with a Search" value={searchKey} onChange={(e) => handleChange(e)} onClick={() => setSearch(true)} />
                 <FiSearch className={styles.icon} />
               </div>
+              {searchOption && <SearchFun word={searchKey} setSearchOption={handleEmpty}/>}
               {search && <SearchTab handleRemoveSearch={handleRemoveSearch} />}
             </div>
           </LeftNav>
