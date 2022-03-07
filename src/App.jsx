@@ -14,6 +14,7 @@ import Product from './Components/Pages/Product';
 
 import { Navbar } from './Components/Navbar/Navbar';
 import { Footer } from './Components/Footer/Footer';
+import Checkout from './Components/Pages/Checkout';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path='/matress' element={<Mattress/>} />
         <Route path='/sofa' element={<Sofa/>}/>
         <Route path='/product' element={<Product/>} />
+        <Route path='/checkout' element={<Checkout/>}/>
      </Routes>
      {/* <MainCart/> */}
       <Footer/>

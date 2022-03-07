@@ -3,8 +3,13 @@ import React from 'react'
 import styles from './styles.module.css';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { ProductContext } from '../../../../Context/ProductContext';
-const ProductAppend = ({ product_img, product_name, product_Offerprice, product_price }) => {
-    const { cart, setCart } = React.useContext(ProductContext);
+import { useNavigate } from 'react-router-dom';
+const ProductAppend = () => {
+    const navigate= useNavigate()
+    const handlePayment=()=>{
+        navigate("/checkout")
+    }
+    const { cart,handleCartRemove,handleWishlist } = React.useContext(ProductContext);
     return (
         <div>
 
@@ -35,7 +40,10 @@ const ProductAppend = ({ product_img, product_name, product_Offerprice, product_
                                         <p style={{ border: "1px dashed black", width: "fit-content", fontStyle: "italic" }}>Use Coupon WOW To Avail Offer Price</p>
                                     </Typography>
                                     <div>
-                                        <Button>Move to Wishlist</Button><Button>Remove</Button>
+                                        <Button onClick={()=>{
+                                            handleWishlist(data)
+                                            handleCartRemove(data.id)
+                                        }}>Move to Wishlist</Button><Button onClick={handleCartRemove(data.id)}>Remove</Button>
                                     </div>
                                 </CardContent>
                             </Box>
@@ -43,7 +51,7 @@ const ProductAppend = ({ product_img, product_name, product_Offerprice, product_
                         </Card>
                     </div>)
             })}
-            <button className={styles.payment_Button}>Proceed To Pay Securely</button>
+            <button className={styles.payment_Button} onClick={handlePayment}>Proceed To Pay Securely</button>
         </div>
     )
 }
