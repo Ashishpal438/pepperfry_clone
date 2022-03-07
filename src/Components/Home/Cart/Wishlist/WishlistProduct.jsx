@@ -5,7 +5,7 @@ import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { GiShoppingCart } from "react-icons/gi";
 import { ProductContext } from '../../../../Context/ProductContext';
 const WishlistProduct = () => {
-    const {wishlist}=React.useContext(ProductContext);
+    const {wishlist,handleCart,handleWishlistRemove}=React.useContext(ProductContext);
 
     return (
         <div>
@@ -39,11 +39,13 @@ const WishlistProduct = () => {
                                             <Icon>
                                                 <GiShoppingCart />
                                             </Icon>
-                                            <Link>
+                                            <Link onClick={()=>{
+                                                handleCart(data)
+                                                handleWishlistRemove(data.id)}}>
                                                 Add to Cart
                                             </Link>
                                         </IconButton>
-                                        <IconButton sx={{ fontSize: "15px" }}><Link  onClick={()=>{}}>Remove</Link></IconButton>
+                                        <IconButton sx={{ fontSize: "15px" }}><Link  onClick={()=>handleWishlistRemove(data.id)}>Remove</Link></IconButton>
                                     </div>
                                 </CardContent>
                             </Box>
