@@ -10,7 +10,7 @@ import SearchTab from './SearchTab';
 import SearchFun from './SearchFun';
 import { ProductContext } from '../../Context/ProductContext';
 import { Link } from 'react-router-dom';
-import SearchFun from './SearchFun';
+// import SearchFun from './SearchFun';
 import { Modal } from '@mui/material';
 import MainCart from '../Home/Cart/MainCart';
 import SignUp from './Login/SignUpModal/signup';

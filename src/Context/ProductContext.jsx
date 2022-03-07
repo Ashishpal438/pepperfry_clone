@@ -44,6 +44,7 @@ export const ProductContextProvider = ({children}) => {
                     if (obj.email === email) {
                         setAuth(true)
                         setLogInOpen(false);
+                        alert("Login Successful")
                         return
                     }
                 }

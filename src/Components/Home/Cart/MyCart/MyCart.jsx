@@ -2,7 +2,7 @@ import { Typography } from '@mui/material'
 import React, { useState } from 'react'
 import ProductAppend from './ProductAppend'
 import styles from './styles.module.css'
-const MyCart = ({ cartCount, setCartCount }) => {
+export const MyCart = ({ cartCount, setCartCount }) => {
 
   return (
     <div className={styles.my_cart}>

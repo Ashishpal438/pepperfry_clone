@@ -28,8 +28,6 @@ export default function Checkout() {
             .then(res => setCart(res))
             .then(res => checkoutPrice())
             .catch(err => console.log(err))
-
-
     }
     useEffect(() => {
         fetchData();
@@ -82,7 +80,7 @@ export default function Checkout() {
                             cart?.map((item, ind) => <CartItem item={item} key={ind} deleteItem={deleteItem} moveItem={moveItem} />)
                         }
                     </div>
-                </div >
+                </div>
 
                 <div className={styles.right}>
                     <div className={styles.div}>

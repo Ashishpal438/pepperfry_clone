@@ -27,7 +27,7 @@ const MainCart = () => {
                 setWishlist(res);
             })
             .catch((err) => console.log(err))
-    }, [])
+    }, [cart])
     return (
         <div className={styles.mainCartContainer}>
             <div className={styles.cartNav}>
