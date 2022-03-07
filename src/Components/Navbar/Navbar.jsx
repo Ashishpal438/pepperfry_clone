@@ -58,15 +58,9 @@ export const Navbar = () => {
   const [searchKey, setSearchKey] = React.useState("");
   const [search, setSearch] = React.useState(false);
   const [loginVis, setLoginVis] = React.useState(false);
-  const [open, setOpen] = React.useState(false);
-  const { disp_change, loginModal, logInopen, setLogInOpen, handleloginClose, handleLoginOpen } = useContext(ProductContext)
-
-  const handleOpen = (comp) => {
-    setOpen(true)
-
-    disp_change(comp)
-  };
-  const handleClose = () => setOpen(false);
+  const { disp_change, loginModal, logInopen, setLogInOpen, handleloginClose, handleLoginOpen, opencart, setOpencart
+,handleClosecart,handleOpencart}=useContext(ProductContext)
+  
   const cancleMeta = () => {
     setMeta("");
   }
@@ -108,25 +102,25 @@ export const Navbar = () => {
             </div>
 
             <div className={styles.profile}>
-              <BsHeart onClick={() => handleOpen("wishlist")} className={styles.profileIcon} />
-              <RiShoppingCart2Line onClick={() => handleOpen("mycart")} className={styles.profileIcon} />
+              <BsHeart onClick={()=>handleOpencart("wishlist")} className={styles.profileIcon} />
+              <RiShoppingCart2Line onClick={()=>handleOpencart("mycart")} className={styles.profileIcon} />
               <Modal
                 keepMounted
-                open={open}
-                onClose={handleClose}
+                open={opencart}
+                onClose={handleClosecart}
               >
-                <MainCart />
+                <MainCart/>
               </Modal>
               <HiOutlineUser size="2rem" style={{ position: "relative" }} onMouseEnter={() => setLoginVis(true)} />
               {loginVis && (<div className={styles.loginVisible} onMouseLeave={() => setLoginVis(false)}>
                 <button onClick={handleLoginOpen}>LOGIN/REGISTER</button>
                 <Modal
-                  keepMounted
-                  open={logInopen}
-                  onClose={handleloginClose}
-                >
-                  {loginModal === "signUp" ? <SignUp /> : loginModal === "login" ? <LogIn /> : <OTP />}
-                </Modal>
+                keepMounted
+                open={logInopen}
+                onClose={handleloginClose}
+            >
+            {loginModal==="signUp"?<SignUp/>:loginModal==="login"?<LogIn/>:<OTP/>}
+            </Modal>
                 <p>To access your account & manage orders</p>
               </div>)}
             </div>

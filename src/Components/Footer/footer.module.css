@@ -29,11 +29,11 @@
     margin: 2em;
     display: grid;
     grid-template-columns: 50% 50%;
+    padding-bottom: 1em;
 }
 .horizontal{
     text-align: center;
-        display: grid;
-        grid-template-columns: repeat(6 12%);
+        display: flex;
         column-gap: 2%;
         row-gap: 2%;
 }
@@ -80,19 +80,11 @@ img:hover{
     .download{
         font-size: 1rem;
     }
-    
-    
+       
 }
 @media screen and (max-width:650px) {
     .footer{
         font-size: .6rem;
-    }
-    .horizontal{
-        text-align: center;
-        display: grid;
-        grid-template-columns: repeat(3 30%);
-        column-gap: 2%;
-        row-gap: 2%;
     }
     
 }

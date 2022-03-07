@@ -8,7 +8,7 @@ import Recent from './Recent/Recent'
 import Wishlist from './Wishlist/Wishlist'
 import { ProductContext } from '../../../Context/ProductContext'
 const MainCart = () => {
-    const { cartCount, setCartCount, wishlistCount, setWishlistCount, recentCount, setRecentCount, display, setDisplay, setWishlist, setCart } = React.useContext(ProductContext);
+    const { cartCount, setCartCount, wishlistCount, setWishlistCount, recentCount, setRecentCount, display, setDisplay, setWishlist, setCart,cart,wishlist } = React.useContext(ProductContext);
     const hanldeComponent = (arg) => {
         setDisplay(arg)
     }
@@ -27,7 +27,7 @@ const MainCart = () => {
                 setWishlist(res);
             })
             .catch((err) => console.log(err))
-    }, [])
+    }, [cart,wishlist])
     return (
         <div className={styles.mainCartContainer}>
             <div className={styles.cartNav}>
