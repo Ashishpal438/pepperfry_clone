@@ -3,7 +3,12 @@ import React from 'react'
 import styles from './styles.module.css';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { ProductContext } from '../../../../Context/ProductContext';
+import { useNavigate } from 'react-router-dom';
 const ProductAppend = () => {
+    const navigate= useNavigate()
+    const handlePayment=()=>{
+        navigate("/checkout")
+    }
     const { cart,handleCartRemove,handleWishlist } = React.useContext(ProductContext);
     return (
         <div>
@@ -46,7 +51,7 @@ const ProductAppend = () => {
                         </Card>
                     </div>)
             })}
-            <button className={styles.payment_Button}>Proceed To Pay Securely</button>
+            <button className={styles.payment_Button} onClick={handlePayment}>Proceed To Pay Securely</button>
         </div>
     )
 }
