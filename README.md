@@ -52,7 +52,7 @@ You can also take the glimpse of our Project,just follow the below steps:
 - Existing user can Login and new user's can Register themselves.
 - to Register and Login there are Two option,
 
-<img width="929" alt="https://github.com/Ashishpal438/pepperfry_clone/blob/main/src/Images/signup_page.png">
+<img width="929" alt="Screenshot" src="https://github.com/Ashishpal438/pepperfry_clone/blob/main/src/Images/signup_page.png">
 
 
 ## Product Page
