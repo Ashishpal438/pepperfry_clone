@@ -2,6 +2,8 @@ import React from "react";
 
 export const ProductContext = React.createContext();
 
+const axios = require('axios');
+
 export const ProductContextProvider = ({ children }) => {
     const [product, setProduct] = React.useState("");
     const [page, setPage] = React.useState("furniture");
@@ -99,21 +101,18 @@ export const ProductContextProvider = ({ children }) => {
             .catch(err => console.log(err));
     }
 
-
     const registerUser = (obj) => {
-          fetch("https://pepperfry-backend1.herokuapp.com/users", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: obj.name,
-                email: obj.email,
-                password: obj.password,
-                mobile: obj.mobile
-            })
-          })
-          .then(res => res.json())
+        axios.post('https://pepperfry-backend1.herokuapp.com/users', {
+            name: obj.name,
+            email: obj.email,
+            password: obj.password,
+            mobile: obj.mobile
+        })
+        .then(res => {
+          console.log(res.data)
+         }
+        )
+        .catch(err => console.log(err))
     }
 
 
