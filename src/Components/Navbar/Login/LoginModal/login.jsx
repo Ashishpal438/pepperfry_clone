@@ -23,7 +23,6 @@ const LogIn = () => {
     //  console.log(document.getElementById("standard-basic2"));
     const [userMail, setUserMail] = React.useState("")
     const [userpassword, setUserPassword] = React.useState("")
-    console.log("mail-->", userMail, "password--->", userpassword)
 
     const { login_change, setLoginModal, authentication } = React.useContext(ProductContext);
     const handleLogin = (email, password) => {

@@ -42,7 +42,7 @@ export const ProductContextProvider = ({ children }) => {
                 for (var i = 0; i < d.length; i++) {
                     var obj = d[i]
                     console.log("obj email", obj.email, "email enterd", email)
-                    if (obj.email === email) {
+                    if (obj.email === email && obj.password === password) {
                         setAuth(true)
                         setLogInOpen(false);
                         alert("Login Successful")
@@ -100,6 +100,23 @@ export const ProductContextProvider = ({ children }) => {
     }
 
 
+    const registerUser = (obj) => {
+          fetch("https://pepperfry-backend1.herokuapp.com/users", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: obj.name,
+                email: obj.email,
+                password: obj.password,
+                mobile: obj.mobile
+            })
+          })
+          .then(res => res.json())
+    }
+
+
 
 
     return (
@@ -136,7 +153,8 @@ export const ProductContextProvider = ({ children }) => {
             handleWishlistRemove,
             handleWishlist,
             handleCartRemove,
-            Auth
+            Auth,
+            registerUser
         }}>
             {children}
         </ProductContext.Provider>
