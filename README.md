@@ -45,14 +45,14 @@ You can also take the glimpse of our Project,just follow the below steps:
 - In top section there is a Header which displays Dropdown menu of pages.
 - At the bottom section there is a footer, both Header & Footer are same across all the pages.
 
-<img width="929" alt="Screenshot" src="https://github.com/Ashishpal438/pepperfry_clone/tree/main/src/Images/landing_page.png">
+<img width="929" alt="Screenshot" src="https://github.com/Ashishpal438/pepperfry_clone/blob/main/src/Images/landing_page.png">
 
 ## Login Page
 
 - Existing user can Login and new user's can Register themselves.
 - to Register and Login there are Two option,
 
-<img width="929" alt="Screenshot (640)" src="https://github.com/Ashishpal438/pepperfry_clone/tree/main/src/Images/signup_page.png">
+<img width="929" alt="https://github.com/Ashishpal438/pepperfry_clone/blob/main/src/Images/signup_page.png">
 
 
 ## Product Page
@@ -68,16 +68,16 @@ You can also take the glimpse of our Project,just follow the below steps:
 
 - There are some Key Features which are added in website clone such as,
 
-<img width="929" alt="Screenshot" src="https://github.com/Ashishpal438/pepperfry_clone/tree/main/src/Images/product_page.png">
+<img width="929" alt="Screenshot" src="https://github.com/Ashishpal438/pepperfry_clone/blob/main/src/Images/product_page.png">
 
 ## Add to Cart & Add to Wishlist
 
-<img width="929" alt="Screenshot " src="https://github.com/Ashishpal438/pepperfry_clone/tree/main/src/Images/cart.png">
-<img width="929" alt="Screenshot" src="https://github.com/Ashishpal438/pepperfry_clone/tree/main/src/Images/wishlist.png">
+<img width="929" alt="Screenshot " src="https://github.com/Ashishpal438/pepperfry_clone/blob/main/src/Images/cart.png">
+<img width="929" alt="Screenshot" src="https://github.com/Ashishpal438/pepperfry_clone/blob/main/src/Images/wishlist.png">
 
 ## Checkout Page
 
-<img width="929" alt="Screenshot" src="https://github.com/Ashishpal438/pepperfry_clone/tree/main/src/Images/checkout.png">
+<img width="929" alt="Screenshot" src="https://github.com/Ashishpal438/pepperfry_clone/blob/main/src/Images/checkout.png">
 
 ## Team Members and Contributors
 
