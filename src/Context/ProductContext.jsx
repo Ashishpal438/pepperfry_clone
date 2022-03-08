@@ -2,8 +2,8 @@ import React from "react";
 
 export const ProductContext = React.createContext();
 
-export const ProductContextProvider = ({children}) => {
-    const [product , setProduct] = React.useState("");
+export const ProductContextProvider = ({ children }) => {
+    const [product, setProduct] = React.useState("");
     const [page, setPage] = React.useState("furniture");
     const [display, setDisplay] = React.useState("")
     const [cartCount, setCartCount] = React.useState(0);
@@ -16,10 +16,12 @@ export const ProductContextProvider = ({children}) => {
     const [wishlist, setWishlist] = React.useState([]);
     const [Auth, setAuth] = React.useState(false);
     const [opencart, setOpencart] = React.useState(false);
+
     const handleloginClose = () => {
         setLogInOpen(false)
         setLoginModal("signUp")
     };
+
     const disp_change = (val) => {
         setDisplay(val)
     }
@@ -31,20 +33,20 @@ export const ProductContextProvider = ({children}) => {
         disp_change(comp)
     };
     const handleClosecart = () => setOpencart(false);
-    
+
     const authentication = (email, password) => {
         fetch(`https://pepperfry-backend1.herokuapp.com/users`)
 
             .then((r) => r.json())
             .then((d) => {
-                console.log("d",d)
                 for (var i = 0; i < d.length; i++) {
                     var obj = d[i]
-                    console.log("obj email",obj.email,"email enterd",email)
+                    console.log("obj email", obj.email, "email enterd", email)
                     if (obj.email === email) {
                         setAuth(true)
                         setLogInOpen(false);
                         alert("Login Successful")
+                        setAuth(true)
                         return
                     }
                 }
@@ -76,13 +78,14 @@ export const ProductContextProvider = ({children}) => {
         }
 
         fetch("https://pepperfry-backend1.herokuapp.com/cart", config)
-            .then(res=>res.json())
+            .then(res => res.json())
             .then(res => {
-                console.log("added to cart:",res)})
+                console.log("added to cart:", res)
+            })
             .catch(err => console.log(err));
     }
 
-    const handleWishlist = (prod) => {  
+    const handleWishlist = (prod) => {
         const config = {
             method: "POST",
             headers: {
@@ -100,7 +103,41 @@ export const ProductContextProvider = ({children}) => {
 
 
     return (
-        <ProductContext.Provider value={{ product, setProduct, page, setPage, display, setDisplay, cartCount, setCartCount, wishlistCount, setWishlistCount, recentCount, setRecentCount, disp_change, loginModal, setLoginModal, login_change, logInopen, setLogInOpen, handleLoginOpen, handleloginClose, cart, wishlist, setCart, setWishlist, authentication, opencart, setOpencart, handleOpencart, handleClosecart, handleCart, handleWishlistRemove, handleWishlist, handleCartRemove,Auth}}>
+        <ProductContext.Provider value={{
+            product,
+            setProduct,
+            page,
+            setPage,
+            display,
+            setDisplay,
+            cartCount,
+            setCartCount,
+            wishlistCount,
+            setWishlistCount,
+            recentCount,
+            setRecentCount,
+            disp_change,
+            loginModal,
+            setLoginModal,
+            login_change,
+            logInopen,
+            setLogInOpen,
+            handleLoginOpen,
+            handleloginClose,
+            cart, wishlist,
+            setCart,
+            setWishlist,
+            authentication,
+            opencart,
+            setOpencart,
+            handleOpencart,
+            handleClosecart,
+            handleCart,
+            handleWishlistRemove,
+            handleWishlist,
+            handleCartRemove,
+            Auth
+        }}>
             {children}
         </ProductContext.Provider>
     )

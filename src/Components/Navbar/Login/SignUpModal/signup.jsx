@@ -21,15 +21,7 @@ const style = {
 
 const SignUp = () => {
     const { setLoginModal } = React.useContext(ProductContext)
-
-    const CssTextField = styled(TextField)({
-        '& label.Mui-focused': {
-            color: '#e75a16',
-        },
-        '& .MuiInput-underline:after': {
-            borderBottomColor: '#e75a16',
-        },
-    });
+    
     return (
         <div>
             <Box sx={style}>
@@ -37,14 +29,14 @@ const SignUp = () => {
                     <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Web_IMG_17Dec_09022022.jpg" alt="img" width='100%' />
                     <div>
                         <div className={styles.input_form}>
-                            <CssTextField className={styles.tf} id="standard-basic1" label="Name" variant="standard" fullWidth />
+                            <TextField id="standard-basic1" color="warning" label="Name" variant="standard" fullWidth />
                             <br />
-                            <CssTextField id="standard-basic2" label="Mobile No." variant="standard" />
+                            <TextField id="standard-basic2" color="warning" label="Mobile No." variant="standard" />
                             {/* <link>Verfiy with otp</link> */}
                             <br />
-                            <CssTextField id="standard-basic3" label="Email" variant="standard" fullWidth />
+                            <TextField id="standard-basic3" color="warning" label="Email" variant="standard" fullWidth />
                             <br />
-                            <CssTextField id="standard-basic4" label="Password" variant="standard" type="password" fullWidth />
+                            <TextField id="standard-basic4" color="warning" label="Password" variant="standard" type="password" fullWidth />
                             <br />
                             <button className={styles.register_btn} onClick={() => setLoginModal("login")} >Register</button>
                             <Typography>By registering you agree to our <u>Terms & Conditions</u></Typography>

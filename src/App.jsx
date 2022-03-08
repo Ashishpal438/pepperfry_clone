@@ -1,10 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import MainCart from './Components/Home/Cart/MainCart';
 import { Home } from './Components/Home/Home';
 import Product from './Components/Pages/Product';
-
-import { Navbar } from './Components/Navbar/Navbar';
 import { Footer } from './Components/Footer/Footer';
 import Checkout from './Components/Pages/Checkout';
 
@@ -16,7 +13,7 @@ function App() {
         <Route path='/product' element={<Product/>} />
         <Route path='/checkout' element={<Checkout/>}/>
      </Routes>
-     {/* <MainCart/> */}
+     
       <Footer/>
     </div>
   );

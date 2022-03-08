@@ -21,7 +21,8 @@ const MainCart = () => {
             setWishlist, 
             setCart, 
             cart, 
-            wishlist 
+            wishlist, 
+            Auth
         } = React.useContext(ProductContext);
 
 
@@ -34,7 +35,7 @@ const MainCart = () => {
         getCartItems()
         getWishlistItems()
        
-    }, [])
+    }, [cart, wishlist])
 
 
     const getWishlistItems = () => {

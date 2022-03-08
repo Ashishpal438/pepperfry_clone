@@ -62,7 +62,7 @@ export const Navbar = () => {
   const [searchOption, setSearchOption] = React.useState(false);
   const [loginVis, setLoginVis] = React.useState(false);
   const { disp_change, loginModal, logInopen, setLogInOpen, handleloginClose, handleLoginOpen, opencart, setOpencart
-,handleClosecart,handleOpencart}=useContext(ProductContext)
+,handleClosecart,handleOpencart,Auth}=useContext(ProductContext)
   
   const cancleMeta = () => {
     setMeta("");
@@ -118,8 +118,8 @@ export const Navbar = () => {
             </div>
 
             <div className={styles.profile}>
-              <BsHeart onClick={()=>handleOpencart("wishlist")} className={styles.profileIcon} />
-              <RiShoppingCart2Line onClick={()=>handleOpencart("mycart")} className={styles.profileIcon} />
+              <BsHeart onClick={()=> Auth?handleOpencart("wishlist"):alert("Please Login to view the wishlist")} className={styles.profileIcon} />
+              <RiShoppingCart2Line onClick={()=> Auth?handleOpencart("mycart"):(alert("Please Login to view the cart"))} className={styles.profileIcon} />
               <Modal
                 keepMounted
                 open={opencart}
