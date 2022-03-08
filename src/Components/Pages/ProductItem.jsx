@@ -8,7 +8,7 @@ import { ProductContext } from "../../Context/ProductContext";
 export default function ProductItem({ prod }) {
     const [showCartBtn, setShowCartBtn] = useState(false);
     const [liked, setLiked] = useState(false);
-    const { handleOpencart, handleWishlistRemove, handleCart, handleWishlist
+    const { handleOpencart, handleWishlistRemove, handleCart, handleWishlist, Auth
     } = React.useContext(ProductContext)
     return (
         <div onMouseOver={() => setShowCartBtn(true)} onMouseLeave={() => setShowCartBtn(false)}>
@@ -23,10 +23,12 @@ export default function ProductItem({ prod }) {
                     handleWishlist(prod)
                 }
                 } />}
-                {showCartBtn && <button className={styles.cartBtn} onClick={async () => {
-                    await handleCart(prod);
-                    handleOpencart("mycart");                  
-                }}>Add To Cart</button>}
+                {showCartBtn && <button className={styles.cartBtn} onClick={
+                    async () => {
+                        await handleCart(prod)
+                        Auth ? (handleOpencart("mycart")) : alert("Please Login First")          
+                    }          
+                }>Add To Cart</button>}
             </div>
             <div>
                 <p className={styles.dis}>{prod.name}</p>
@@ -36,6 +38,6 @@ export default function ProductItem({ prod }) {
                 <p className={styles.p}>Earn cashback <span className={styles.bold}>$ {prod.cashback}</span></p>
                 <p className={styles.p}>Ships in <span className={styles.bold}>{prod.ship}</span></p>
             </div>
-        </div>
+        </div >
     )
 }

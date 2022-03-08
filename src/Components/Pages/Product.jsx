@@ -30,7 +30,8 @@ export default function Product(){
     console.log("product", product, prodData)
     return (
         <>
-        <div >
+        <Navbar />
+        <div>
             <div className={styles.cont}>
                 <h1 style={{textAlign: "center", marginTop: "2rem", fontSize:"3rem"}}>{product}</h1>
                 <h3 style={{textAlign: "center", marginTop: "2rem"}}>{page}</h3>

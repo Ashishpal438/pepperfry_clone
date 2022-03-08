@@ -33,12 +33,12 @@ export const MidComponent = () => {
                 <p >Work From Home</p>
             </div>
 
-            <div onClick={() => showProduct("mattress")}>
+            <div onClick={() => showProduct("beds")}>
                 <img src="https://ii3.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_3__2x_17022022.jpg" alt="Bedroom" />
                 <p>Bedroom</p>
             </div>
 
-            <div onClick={() => showProduct("decore")}>
+            <div onClick={() => showProduct("decor")}>
                 <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Rooms_Section_Web_4__2x_17022022.jpg" alt="Kids Room" />
                 <p>Kids Room</p>
             </div>
@@ -48,23 +48,23 @@ export const MidComponent = () => {
     <div className={styles.mainContainer}>
         <h1 className={styles.heading}>What's Everyone Eyeing?</h1>
         <div className={styles.cardContainer2}>
-            <div>
+            <div onClick={() => showProduct("cabinetry")}>
                 <img src="https://ii2.pepperfry.com/media/wysiwyg/banners/Homepage_Trend_Section_WEB_1_2x_17022022-new.jpg" alt="Queen Size Beds" />
             </div>
-            <div>
+            <div onClick={() => showProduct("lighting ")}>
                 <img src="https://ii3.pepperfry.com/media/wysiwyg/banners/Homepage_Trend_Section_WEB_2_2x_17022022-new.jpg" alt="Clock" />
             </div>
             <div className={styles.grid}>
-                <div>
+                <div onClick={() => showProduct("sofa")}>
                     <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Trend_Section_WEB_3_2x_17022022.jpg" alt="Study Tables" />
                 </div>
-                <div>
+                <div  onClick={() => showProduct("decor")}>
                     <img src="https://ii3.pepperfry.com/media/wysiwyg/banners/Homepage_Trend_Section_WEB_5_2x_17022022-new.jpg" alt="Wardrobes" />
                 </div>
-                <div>
+                <div onClick={() => showProduct("lighting ")}>
                     <img src="https://ii2.pepperfry.com/media/wysiwyg/banners/Homepage_Trend_Section_WEB_4_2x_17022022.jpg" alt="Shoe Racks" />
                 </div>
-                <div>
+                <div  onClick={() => showProduct("decor")}>
                     <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Trend_Section_WEB_6_2x_17022022.jpg" alt="Bed Sheets" />
                 </div>
             </div>
@@ -86,17 +86,17 @@ export const MidComponent = () => {
 
     </div>
      <div className={styles.cardContainerSlider}>
-        <div className={styles.slider} id='firstimg' >
+        <div className={styles.slider} id='firstimg'  onClick={() => showProduct("decor")}>
             <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Budget_Block_WEB_3_2x_17022022-new.jpg" alt="Dining Sets" />
             <p className={styles.coffee}>Coffee Tables &#60; 6K </p>
             <p className={styles.grey}>226+ Optios</p>
          </div> 
-         <div className={styles.slider}>
+         <div className={styles.slider} onClick={() => showProduct("furnishing")}>
              <img src="https://ii2.pepperfry.com/media/wysiwyg/banners/Homepage_Budget_Block_WEB_3_2x_17022022.jpg" alt="" />
              <p className={styles.coffee}>Office Chairs &#60; 8K </p>
             <p className={styles.grey}>343+ Optios</p>
          </div>  
-         <div className={styles.slider}>
+         <div className={styles.slider} onClick={() => showProduct("/lighting ")}>
              <img src="https://ii3.pepperfry.com/media/wysiwyg/banners/Homepage_Budget_Block_WEB_5_2x_17022022.jpg" alt="" />
              <p className={styles.coffee}>Beside Tables &#60; 6K </p>
             <p className={styles.grey}>93+ Optios</p>
@@ -106,22 +106,22 @@ export const MidComponent = () => {
              <p className={styles.coffee}>Portable Tables &#60; 8K </p>
             <p className={styles.grey}>88+ Optios</p>
          </div>  
-         <div className={styles.slider}>
+         <div className={styles.slider}  onClick={() => showProduct("decor")}>
             <img src="https://ii2.pepperfry.com/media/wysiwyg/banners/Homepage_Budget_Block_WEB_1_2x_17022022.jpg" alt="Dining Sets" />
             <p className={styles.coffee}>4 Seater Dining Sets &#60; 6K </p>
             <p className={styles.grey}>226+ Optios</p>
          </div> 
-         <div className={styles.slider}>
+         <div className={styles.slider} onClick={() => showProduct("furnishing")}>
              <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Budget_Block_WEB_6_2x_17022022.jpg" alt="" />
              <p className={styles.coffee}>Portable Tables &#60; 8K </p>
             <p className={styles.grey}>88+ Optios</p>
          </div>  
-         <div className={styles.slider}>
+         <div className={styles.slider}  onClick={() => showProduct("decor")}>
              <img src="https://ii3.pepperfry.com/media/wysiwyg/banners/Homepage_Budget_Block_WEB_2_2x_17022022.jpg" alt="" />
              <p className={styles.coffee}>Office Chairs &#60; 8K </p>
             <p className={styles.grey}>343+ Optios</p>
          </div>  
-         <div className={styles.slider}>
+         <div className={styles.slider} onClick={() => showProduct("/lighting ")}>
              <img src="https://ii3.pepperfry.com/media/wysiwyg/banners/Homepage_Budget_Block_WEB_5_2x_17022022.jpg" alt="" />
              <p className={styles.coffee}>Beside Tables &#60; 6K </p>
             <p className={styles.grey}>93+ Optios</p>
@@ -140,19 +140,19 @@ export const MidComponent = () => {
                 <p className={styles.orange}>View all Styles</p>
             </div>
 
-            <div>
+            <div onClick={() => showProduct("/lighting ")}>
                 <img src="https://ii2.pepperfry.com/media/wysiwyg/banners/Homepage_Style_Block_Web_1_2x_04032022.jpg" alt="img" />
                 <p className={styles.coffee}>Modern </p>
                 <p className={styles.grey}>From Meets Function</p>
             </div>
 
-            <div>
+            <div onClick={() => showProduct("furnishing")}>
                 <img src="https://ii3.pepperfry.com/media/wysiwyg/banners/Homepage_Style_Block_Web_2_2x_04032022.jpg" alt="img" />
                 <p className={styles.coffee}>Traditional</p>
                 <p className={styles.grey}>Old World Charm</p>
             </div>
 
-            <div>
+            <div onClick={() => showProduct("furniture")}>
                 <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Style_Block_Web_3_2x_04032022.jpg" alt="img" />
                 <p className={styles.coffee}>Industrial</p>
                 <p className={styles.grey}>Perfect Imperfections</p>
@@ -182,12 +182,12 @@ export const MidComponent = () => {
 
     </div>
      <div className={styles.cardContainerSlider2}>
-        <div className={styles.slider} id='secondimg' >
+        <div className={styles.slider} id='secondimg' onClick={() => showProduct("furniture")}>
             <img src="https://ii2.pepperfry.com/media/wysiwyg/banners/Homepage_Collection_Block_WEB_1_2x_04032022.jpg" alt="Dining Sets" />
             <p className={styles.coffee}>Scandinavian Collection </p>
             <p className={styles.grey}>Home Hygge Home</p>
          </div> 
-         <div className={styles.slider}>
+         <div className={styles.slider} onClick={() => showProduct("/lighting ")}>
              <img src="https://ii3.pepperfry.com/media/wysiwyg/banners/Homepage_Collection_Block_WEB_2_2x_04032022.jpg" alt="img" />
              <p className={styles.coffee}>Sofa Chairs </p>
             <p className={styles.grey}>Single Seater Sofas</p>
@@ -207,7 +207,7 @@ export const MidComponent = () => {
             <p className={styles.coffee}>Yesh Collection </p>
             <p className={styles.grey}>Modern Latticework</p>
          </div> 
-         <div className={styles.slider}>
+         <div className={styles.slider} onClick={() => showProduct("furniture")}>
              <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Collection_Block_WEB_6_2x_04032022.jpg" alt="img" />
              <p className={styles.coffee}>Cabinets & Sideboards </p>
             <p className={styles.grey}>Latest Styles Added</p>
@@ -233,12 +233,12 @@ export const MidComponent = () => {
 
 </div>
  <div className={styles.cardContainerSlider}>
-    <div className={styles.slider} id='thirdimg' >
+    <div className={styles.slider} id='thirdimg' onClick={() => showProduct("furniture")}>
         <img src="https://ii2.pepperfry.com/media/wysiwyg/banners/Homepage_Decor_Block_WEB_1_2x_17022022.jpg" alt='img' />
         <p className={styles.coffee}>Hanging Lights</p>
         <p className={styles.grey}>Instant Makeover</p>
      </div> 
-     <div className={styles.slider}>
+     <div className={styles.slider} >
          <img src="https://ii3.pepperfry.com/media/wysiwyg/banners/Homepage_Decor_Block_WEB_2_2x_17022022.jpg" alt="img" />
          <p className={styles.coffee}>Meta Wall Art</p>
         <p className={styles.grey}>A sleek Addition</p>
@@ -248,7 +248,7 @@ export const MidComponent = () => {
          <p className={styles.coffee}>Pots & Planters</p>
         <p className={styles.grey}>Green is in</p>
      </div>  
-     <div className={styles.slider}>
+     <div className={styles.slider} onClick={() => showProduct("furniture")}>
          <img src="https://ii2.pepperfry.com/media/wysiwyg/banners/Homepage_Decor_Block_WEB_4_2x_17022022.jpg" alt="img" />
          <p className={styles.coffee}>Wall Shelves</p>
         <p className={styles.grey}>Flying Off The Shelves</p>
@@ -268,7 +268,7 @@ export const MidComponent = () => {
          <p className={styles.coffee}>Pots and Planters </p>
         <p className={styles.grey}>Green is in</p>
      </div>  
-     <div className={styles.slider}>
+     <div className={styles.slider} onClick={() => showProduct("furniture")}>
          <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Homepage_Decor_Block_WEB_6_2x_17022022.jpg" alt="img" />
          <p className={styles.coffee}>Door Mats</p>
         <p className={styles.grey}>Starting Rs. 175</p>
@@ -297,7 +297,7 @@ export const MidComponent = () => {
       </div>
 
        {/* modular */}
-      <div className={styles.modular}>
+      <div className={styles.modular} onClick={() => showProduct("furniture")}>
           <img src="https://ii2.pepperfry.com/media/wysiwyg/banners/Mattress_Block_Web_2X_04032022.jpg" alt="img" />
 
           <img src="https://ii3.pepperfry.com/media/wysiwyg/banners/Modular_Block_Web_2X_04032022.jpg" alt="img" />

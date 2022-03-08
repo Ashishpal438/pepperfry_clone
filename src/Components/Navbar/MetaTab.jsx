@@ -4,7 +4,6 @@ import React from 'react';
 
 export default function MetaTab({currentSubMenu, cancleMeta}) {
     const [currentMeta, setCurrentMeta] = React.useState("Sofas and Recliners");
-    console.log(currentMeta)
     return (
         <div className={styles.cont}>
             <div onMouseLeave={() => cancleMeta()}>

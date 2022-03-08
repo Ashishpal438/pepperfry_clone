@@ -2,8 +2,8 @@ import React from "react";
 
 export const ProductContext = React.createContext();
 
-export const ProductContextProvider = ({children}) => {
-    const [product , setProduct] = React.useState("");
+export const ProductContextProvider = ({ children }) => {
+    const [product, setProduct] = React.useState("");
     const [page, setPage] = React.useState("furniture");
     const [display, setDisplay] = React.useState("")
     const [cartCount, setCartCount] = React.useState(0);
@@ -16,10 +16,12 @@ export const ProductContextProvider = ({children}) => {
     const [wishlist, setWishlist] = React.useState([]);
     const [Auth, setAuth] = React.useState(false);
     const [opencart, setOpencart] = React.useState(false);
+
     const handleloginClose = () => {
         setLogInOpen(false)
         setLoginModal("signUp")
     };
+
     const disp_change = (val) => {
         setDisplay(val)
     }
@@ -31,7 +33,7 @@ export const ProductContextProvider = ({children}) => {
         disp_change(comp)
     };
     const handleClosecart = () => setOpencart(false);
-    
+
     const authentication = (email, password) => {
         fetch(`https://pepperfry-backend1.herokuapp.com/users`)
 
@@ -39,10 +41,12 @@ export const ProductContextProvider = ({children}) => {
             .then((d) => {
                 for (var i = 0; i < d.length; i++) {
                     var obj = d[i]
-                    console.log(obj.email)
+                    console.log("obj email", obj.email, "email enterd", email)
                     if (obj.email === email && obj.password === password) {
                         setAuth(true)
                         setLogInOpen(false);
+                        alert("Login Successful")
+                        setAuth(true)
                         return
                     }
                 }
@@ -53,17 +57,17 @@ export const ProductContextProvider = ({children}) => {
 
     }
     const handleWishlistRemove = (id) => {
-        
         fetch(`https://pepperfry-backend1.herokuapp.com/wishlist/${id}`, { method: 'DELETE' })
             .then(res => console.log(res))
             .catch(err => console.log(err));
     }
-    const handleCartRemove = (id) => {
 
+    const handleCartRemove = (id) => {
         fetch(`https://pepperfry-backend1.herokuapp.com/cart/${id}`, { method: 'DELETE' })
             .then(res => console.log(res))
             .catch(err => console.log(err));
     }
+
     const handleCart = (prod) => {
         const config = {
             method: "POST",
@@ -74,12 +78,14 @@ export const ProductContextProvider = ({children}) => {
         }
 
         fetch("https://pepperfry-backend1.herokuapp.com/cart", config)
-            .then(res=>res.json())
+            .then(res => res.json())
             .then(res => {
-                console.log("added to cart:",res)})
+                console.log("added to cart:", res)
+            })
             .catch(err => console.log(err));
     }
-    const handleWishlist = (prod) => {  
+
+    const handleWishlist = (prod) => {
         const config = {
             method: "POST",
             headers: {
@@ -92,8 +98,64 @@ export const ProductContextProvider = ({children}) => {
             .then(res => console.log(res))
             .catch(err => console.log(err));
     }
+
+
+    const registerUser = (obj) => {
+          fetch("https://pepperfry-backend1.herokuapp.com/users", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: obj.name,
+                email: obj.email,
+                password: obj.password,
+                mobile: obj.mobile
+            })
+          })
+          .then(res => res.json())
+    }
+
+
+
+
     return (
-        <ProductContext.Provider value={{ product, setProduct, page, setPage, display, setDisplay, cartCount, setCartCount, wishlistCount, setWishlistCount, recentCount, setRecentCount, disp_change, loginModal, setLoginModal, login_change, logInopen, setLogInOpen, handleLoginOpen, handleloginClose, cart, wishlist, setCart, setWishlist, authentication, opencart, setOpencart, handleOpencart, handleClosecart, handleCart, handleWishlistRemove, handleWishlist, handleCartRemove,Auth}}>
+        <ProductContext.Provider value={{
+            product,
+            setProduct,
+            page,
+            setPage,
+            display,
+            setDisplay,
+            cartCount,
+            setCartCount,
+            wishlistCount,
+            setWishlistCount,
+            recentCount,
+            setRecentCount,
+            disp_change,
+            loginModal,
+            setLoginModal,
+            login_change,
+            logInopen,
+            setLogInOpen,
+            handleLoginOpen,
+            handleloginClose,
+            cart, wishlist,
+            setCart,
+            setWishlist,
+            authentication,
+            opencart,
+            setOpencart,
+            handleOpencart,
+            handleClosecart,
+            handleCart,
+            handleWishlistRemove,
+            handleWishlist,
+            handleCartRemove,
+            Auth,
+            registerUser
+        }}>
             {children}
         </ProductContext.Provider>
     )

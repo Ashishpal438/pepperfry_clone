@@ -7,12 +7,49 @@ import MyCart from './MyCart/MyCart'
 import Recent from './Recent/Recent'
 import Wishlist from './Wishlist/Wishlist'
 import { ProductContext } from '../../../Context/ProductContext'
+
+
 const MainCart = () => {
-    const { cartCount, setCartCount, wishlistCount, setWishlistCount, recentCount, setRecentCount, display, setDisplay, setWishlist, setCart,cart,wishlist } = React.useContext(ProductContext);
+    const { cartCount, 
+            setCartCount, 
+            wishlistCount, 
+            setWishlistCount, 
+            recentCount, 
+            setRecentCount, 
+            display, 
+            setDisplay, 
+            setWishlist, 
+            setCart, 
+            cart, 
+            wishlist, 
+            Auth
+        } = React.useContext(ProductContext);
+
+
     const hanldeComponent = (arg) => {
         setDisplay(arg)
     }
+
+
     useEffect(() => {
+        getCartItems()
+        getWishlistItems()
+       
+    }, [cart, wishlist])
+
+
+    const getWishlistItems = () => {
+        fetch("https://pepperfry-backend1.herokuapp.com/wishlist")
+        .then((res) => res.json())
+        .then((res) => {
+            setWishlistCount(res.length)
+            setWishlist(res);
+        })
+        .catch((err) => console.log(err))
+    }
+
+
+    const getCartItems = () => {
         fetch("https://pepperfry-backend1.herokuapp.com/cart")
             .then((res) => res.json())
             .then((res) => {
@@ -20,14 +57,10 @@ const MainCart = () => {
                 setCart(res);
             })
             .catch((err) => console.log(err))
-        fetch("https://pepperfry-backend1.herokuapp.com/wishlist")
-            .then((res) => res.json())
-            .then((res) => {
-                setWishlistCount(res.length)
-                setWishlist(res);
-            })
-            .catch((err) => console.log(err))
-    }, [])
+    }
+
+
+
     return (
         <div className={styles.mainCartContainer}>
             <div className={styles.cartNav}>

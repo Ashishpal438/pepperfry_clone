@@ -6,9 +6,6 @@ import { ProductContext } from '../../../../Context/ProductContext';
 import { useNavigate } from 'react-router-dom';
 const ProductAppend = () => {
     const navigate= useNavigate()
-    const handlePayment=()=>{
-        navigate("/checkout")
-    }
     const { cart,handleCartRemove,handleWishlist } = React.useContext(ProductContext);
     return (
         <div>
@@ -43,7 +40,7 @@ const ProductAppend = () => {
                                         <Button onClick={()=>{
                                             handleWishlist(data)
                                             handleCartRemove(data.id)
-                                        }}>Move to Wishlist</Button><Button onClick={handleCartRemove(data.id)}>Remove</Button>
+                                        }}>Move to Wishlist</Button><Button onClick={() => handleCartRemove(data.id)}>Remove</Button>
                                     </div>
                                 </CardContent>
                             </Box>
@@ -51,7 +48,7 @@ const ProductAppend = () => {
                         </Card>
                     </div>)
             })}
-            <button className={styles.payment_Button} onClick={handlePayment}>Proceed To Pay Securely</button>
+            <button className={styles.payment_Button} onClick={() => navigate("/checkout")}>Proceed To Pay Securely</button>
         </div>
     )
 }

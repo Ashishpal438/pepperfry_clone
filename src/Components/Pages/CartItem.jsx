@@ -13,7 +13,7 @@ export default function CartItem({item, deleteItem, moveItem}){
         if(quantity + value > 0){
             setQuantity(quantity + value);
             
-            if(value == -1){
+            if(value === -1){
                 setMrp(mrp - Number(Number(item.mrp.split(",").join(""))));
                 setPrice(price - Number(item.price));
             }
@@ -26,13 +26,13 @@ export default function CartItem({item, deleteItem, moveItem}){
     return (
         <div className={styles.prod}>
             <div className={styles.img}>
-                <img src={item.image}  width="100%" height="100px"/>
+                <img src={item.image}  width="100%" height="100px" alt='img'/>
             </div>
             <div className={styles.dis}>
                 <p>{item.name}</p>
                 <p>6 Months' Warranty, 100% Genuine</p>
 
-                <div className={styles. deli}>
+                <div className={styles.deli}>
                     <div><VscCalendar/></div>
                     <div>
                         <h4>Delivery By</h4>
@@ -48,8 +48,8 @@ export default function CartItem({item, deleteItem, moveItem}){
                     <button onClick={ () => handleQuantity(1)}>+</button>
                 </div>
                 <div className={styles.price}>
-                    <p>{mrp}</p>
-                    <p>{price}</p>
+                    <p>₹{mrp}</p>
+                    <p>₹{price}</p>
                 </div>
             </div>
             <div className={styles.action}>

@@ -1,9 +1,11 @@
 import styles from './Checkout.module.css';
 import { VscLocation } from 'react-icons/vsc';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 import CartItem from './CartItem';
 
 export default function Checkout() {
+      const navigate = useNavigate();
     const [cart, setCart] = useState([]);
     const [cartValue, setCartValue] = useState(0);
     const [discountValue, setDiscountValue] = useState(0);
@@ -28,8 +30,6 @@ export default function Checkout() {
             .then(res => setCart(res))
             .then(res => checkoutPrice())
             .catch(err => console.log(err))
-
-
     }
     useEffect(() => {
         fetchData();
@@ -82,7 +82,7 @@ export default function Checkout() {
                             cart?.map((item, ind) => <CartItem item={item} key={ind} deleteItem={deleteItem} moveItem={moveItem} />)
                         }
                     </div>
-                </div >
+                </div>
 
                 <div className={styles.right}>
                     <div className={styles.div}>
@@ -104,7 +104,7 @@ export default function Checkout() {
                         <input type="checkbox" name='gov' onChange={(e) => handleChecked(e)} /><label>Contribute Rs.99 For COVID Relief Through GiveIndia.</label>
                     </div>
 
-                    <button className={styles.btn}>PLACE ORDER</button>
+                    <button className={styles.btn} onClick={() => navigate('/')} >PLACE ORDER</button>
                 </div>
             </div>
         </div>

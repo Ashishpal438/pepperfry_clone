@@ -47,13 +47,20 @@ const OTP = () => {
         <div>
             <Box sx={style}>
                 <div className={styles.OTP_main_container}>
-                    <img src="https://ii1.pepperfry.com/images/new_login_modal_bg_2020.jpg" alt="" srcset="" />
+                    <img src="https://ii1.pepperfry.com/images/new_login_modal_bg_2020.jpg" alt="" />
                     <div>
                         <div>
                             <div className={styles.otp_form}>
-                                <CssTextField id="standard-basic" label=" Mobile Number" variant="standard" fullWidth value={mobile} onChange={(e) => setMobile(e.currentTarget.value)} />
-                                <Link className={styles.otp_Link} onClick={() => setLoginModal("login")} underline='none'>Login Using Password</Link>
-                                <CssTextField id="standard-basic" label="OTP" variant="standard" fullWidth disabled={otpDisabled} />
+                            <TextField id="standard-basic" color="warning" label=" Mobile Number" variant="standard" fullWidth value={mobile} onChange={(e) => setMobile(e.currentTarget.value)} />
+                                <Link style={{
+                                color: '#e75a16',
+                                textDecoration: 'none',
+                                fontSize: '16px',
+                                cursor: 'pointer'
+                            }} onClick={() => setLoginModal("login")} underline='none'>Login Using Password</Link>
+                               
+                            <TextField id="standard-basic" color="warning" label="OTP" variant="standard" fullWidth disabled={otpDisabled} />
+                           
                             </div>
                             <br />
                             <button className={styles.Get_OTP_Btn} onClick={otpDisabled ? (handleotp) : (submitOtp)}>{otpDisabled ? "Get OTP" : "Submit Otp"}</button>
