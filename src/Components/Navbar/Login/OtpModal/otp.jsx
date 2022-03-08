@@ -47,7 +47,7 @@ const OTP = () => {
         <div>
             <Box sx={style}>
                 <div className={styles.OTP_main_container}>
-                    <img src="https://ii1.pepperfry.com/images/new_login_modal_bg_2020.jpg" alt="" srcset="" />
+                    <img src="https://ii1.pepperfry.com/images/new_login_modal_bg_2020.jpg" alt="" />
                     <div>
                         <div>
                             <div className={styles.otp_form}>

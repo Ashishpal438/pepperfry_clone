@@ -55,17 +55,17 @@ export const ProductContextProvider = ({children}) => {
 
     }
     const handleWishlistRemove = (id) => {
-        
         fetch(`https://pepperfry-backend1.herokuapp.com/wishlist/${id}`, { method: 'DELETE' })
             .then(res => console.log(res))
             .catch(err => console.log(err));
     }
-    const handleCartRemove = (id) => {
 
+    const handleCartRemove = (id) => {
         fetch(`https://pepperfry-backend1.herokuapp.com/cart/${id}`, { method: 'DELETE' })
             .then(res => console.log(res))
             .catch(err => console.log(err));
     }
+
     const handleCart = (prod) => {
         const config = {
             method: "POST",
@@ -81,6 +81,7 @@ export const ProductContextProvider = ({children}) => {
                 console.log("added to cart:",res)})
             .catch(err => console.log(err));
     }
+
     const handleWishlist = (prod) => {  
         const config = {
             method: "POST",
@@ -94,6 +95,10 @@ export const ProductContextProvider = ({children}) => {
             .then(res => console.log(res))
             .catch(err => console.log(err));
     }
+
+
+
+
     return (
         <ProductContext.Provider value={{ product, setProduct, page, setPage, display, setDisplay, cartCount, setCartCount, wishlistCount, setWishlistCount, recentCount, setRecentCount, disp_change, loginModal, setLoginModal, login_change, logInopen, setLogInOpen, handleLoginOpen, handleloginClose, cart, wishlist, setCart, setWishlist, authentication, opencart, setOpencart, handleOpencart, handleClosecart, handleCart, handleWishlistRemove, handleWishlist, handleCartRemove,Auth}}>
             {children}

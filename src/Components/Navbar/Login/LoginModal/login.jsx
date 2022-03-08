@@ -20,10 +20,10 @@ const style = {
 
 
 const LogIn = () => {
-    console.log(document.getElementById("standard-basic2"));
+  //  console.log(document.getElementById("standard-basic2"));
     const [userMail, setUserMail] = React.useState("")
     const [userpassword, setUserPassword] = React.useState("")
-    console.log(userMail, userpassword)
+    console.log("mail", userMail, userpassword)
     const CssTextField = styled(TextField)({
         '& label.Mui-focused': {
             color: '#e75a16',
@@ -36,22 +36,25 @@ const LogIn = () => {
     const handleLogin = (email, password) => {
         authentication(email, password)
     }
+
+
     return (
         <div>
             <Box sx={style}>
                 <div className={styles.Login_main_container}>
-                    <img src="https://ii1.pepperfry.com/images/new_login_modal_bg_2020.jpg" alt="" srcset="" />
+                    <img src="https://ii1.pepperfry.com/images/new_login_modal_bg_2020.jpg" alt="img" />  
+                     
                     <div>
-                        <div className={styles.login_form} >
-                        <CssTextField id="standard-basic" type="email" label="User email" variant="standard"
+                        <div className={styles.login_form}>
+                        <CssTextField id="standard-basic1" type="email" label="User email" variant="standard"
                                 value={userMail}
-                                onKeyPress={(e) => {
+                                onKeyChange={(e) => {
                                     console.log(e);
                                     setUserMail(e.currentTarget.value)
                                 }}
                             />
                             <Link className={styles.login_Link} onClick={() => setLoginModal("otp")} underline="none">LogIn using OTP</Link>
-                            <CssTextField id="standard-basic" type="password" label="Password" variant="standard"
+                            <CssTextField id="standard-basic2" type="password" label="Password" variant="standard"
                                 value={userpassword}
                                 onKeyPress={(e) => setUserPassword(e.currentTarget.value)}
                             />

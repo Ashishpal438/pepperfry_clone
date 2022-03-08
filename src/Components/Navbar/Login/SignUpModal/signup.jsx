@@ -34,17 +34,17 @@ const SignUp = () => {
         <div>
             <Box sx={style}>
                 <div className={styles.signUp_main_container}>
-                    <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Web_IMG_17Dec_09022022.jpg" alt="" srcset="" width='100%' />
+                    <img src="https://ii1.pepperfry.com/media/wysiwyg/banners/Web_IMG_17Dec_09022022.jpg" alt="img" width='100%' />
                     <div>
                         <div className={styles.input_form}>
-                            <CssTextField className={styles.tf} id="standard-basic" label="Name" variant="standard" fullWidth />
+                            <CssTextField className={styles.tf} id="standard-basic1" label="Name" variant="standard" fullWidth />
                             <br />
-                            <CssTextField id="standard-basic" label="Mobile No." variant="standard" />
+                            <CssTextField id="standard-basic2" label="Mobile No." variant="standard" />
                             {/* <link>Verfiy with otp</link> */}
                             <br />
-                            <CssTextField id="standard-basic" label="Email" variant="standard" fullWidth />
+                            <CssTextField id="standard-basic3" label="Email" variant="standard" fullWidth />
                             <br />
-                            <CssTextField id="standard-basic" label="Password" variant="standard" type="password" fullWidth />
+                            <CssTextField id="standard-basic4" label="Password" variant="standard" type="password" fullWidth />
                             <br />
                             <button className={styles.register_btn} onClick={() => setLoginModal("login")} >Register</button>
                             <Typography>By registering you agree to our <u>Terms & Conditions</u></Typography>
