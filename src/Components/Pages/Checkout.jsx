@@ -10,7 +10,6 @@ export default function Checkout() {
     const [cartValue, setCartValue] = useState(0);
     const [discountValue, setDiscountValue] = useState(0);
     const [check, setcheck] = useState(0);
-    const [quantityAction, setQuantityAction] = useState(0);
 
     const checkoutPrice = () => {
         let sum = 0;

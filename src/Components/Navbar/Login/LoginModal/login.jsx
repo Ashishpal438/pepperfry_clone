@@ -1,12 +1,9 @@
 //https://ii1.pepperfry.com/images/new_login_modal_bg_2020.jpg
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Box, Link, TextField } from '@mui/material';
 import { ProductContext } from '../../../../Context/ProductContext'
 import styles from './styles.module.css'
-import styled from '@emotion/styled';
-import { ContactsOutlined } from '@mui/icons-material';
 const style = {
     position: 'absolute',
     top: '50%',
@@ -24,7 +21,7 @@ const LogIn = () => {
     const [userMail, setUserMail] = React.useState("")
     const [userpassword, setUserPassword] = React.useState("")
 
-    const { login_change, setLoginModal, authentication } = React.useContext(ProductContext);
+    const { setLoginModal, authentication } = React.useContext(ProductContext);
     const handleLogin = (email, password) => {
         authentication(email, password)
     }

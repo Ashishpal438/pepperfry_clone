@@ -16,7 +16,7 @@ export default function SearchFun({word, setSearchOption}){
 
     prodArr= prodArr.filter( (prod) => prod.indexOf(word) > -1);
 
-    if(word == ""){
+    if(word === ""){
         setSearchOption();
     }
 

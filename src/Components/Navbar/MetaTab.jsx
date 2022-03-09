@@ -36,7 +36,7 @@ export default function MetaTab({currentSubMenu, cancleMeta}) {
                     </ul>
                 </div>
                 <div>
-                        <img src={metadata[currentSubMenu]["img"]} height="100%" width="100%"/>
+                        <img src={metadata[currentSubMenu]["img"]} height="100%" alt="submenu" width="100%"/>
                 </div>
             </div>
         </div>

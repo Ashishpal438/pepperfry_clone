@@ -2,7 +2,6 @@ import styles from "./Product.module.css";
 import { BsHeart } from 'react-icons/bs';
 import React, { useState } from "react";
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import { ProductContext } from "../../Context/ProductContext";
 
 export default function ProductItem({ prod }) {
@@ -13,7 +12,7 @@ export default function ProductItem({ prod }) {
     return (
         <div onMouseOver={() => setShowCartBtn(true)} onMouseLeave={() => setShowCartBtn(false)}>
             <div>
-                <img width="100%" height="400px" src={prod.image} />
+                <img alt='img' width="100%" height="400px" src={prod.image} />
                 {liked ? <FavoriteIcon className={styles.wishlisted} onClick={() => {
                     setLiked(false);
                     handleWishlistRemove(prod.id)

@@ -1,12 +1,9 @@
 //https://ii1.pepperfry.com/images/new_login_modal_bg_2020.jpg
 import * as React from 'react';
-import Modal from '@mui/material/Modal';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Box, Link, TextField } from '@mui/material';
 import { ProductContext } from '../../../../Context/ProductContext';
 import styles from './styles.module.css'
-import styled from '@emotion/styled';
 const style = {
     position: 'absolute',
     top: '50%',
@@ -19,14 +16,7 @@ const style = {
 };
 
 const OTP = () => {
-    const CssTextField = styled(TextField)({
-        '& label.Mui-focused': {
-            color: '#e75a16',
-        },
-        '& .MuiInput-underline:after': {
-            borderBottomColor: '#e75a16',
-        },
-    });
+ 
     const { setLoginModal, handleloginClose } = React.useContext(ProductContext);
     const [mobile, setMobile] = React.useState("")
     const [otpDisabled, setotpDisabled] = React.useState(true)

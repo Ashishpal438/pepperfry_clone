@@ -41,7 +41,7 @@ const Li = styled.li`
   margin-right: 3rem;
   cursor: pointer;
 
-  ${props => props.selected == props.subMenu ?
+  ${props => props.selected === props.subMenu ?
     ({
       color: "black",
       fontWeight: "bolder",
@@ -61,18 +61,11 @@ export const Navbar = () => {
   const [search, setSearch] = React.useState(false);
   const [searchOption, setSearchOption] = React.useState(false);
   const [loginVis, setLoginVis] = React.useState(false);
-  const { disp_change, loginModal, logInopen, setLogInOpen, handleloginClose, handleLoginOpen, opencart, setOpencart
-,handleClosecart,handleOpencart,Auth}=useContext(ProductContext)
+  const { loginModal, logInopen,  handleloginClose, handleLoginOpen, opencart,handleClosecart,handleOpencart,Auth}=useContext(ProductContext)
   
   const cancleMeta = () => {
     setMeta("");
   }
-
-  // const handleEnter = (e) => {
-  //   if (e.key === 'Enter') {
-  //     console.log("ertyuiop", searchKey)
-  //   }
-  // }
 
   const handleChange = (e) => {
     console.log("Search", search)
@@ -146,7 +139,7 @@ export const Navbar = () => {
         <div className={styles.heading} style={{ display: "flex", position: "relative" }} onMouseLeave={() => setSubMenu("shop")} >
 
           {
-            subMenu == "shop" ? (
+            subMenu === "shop" ? (
               <ul className={styles.menu} >
                 <li onMouseOver={() => setMeta("furniture")} >Furniture</li>
                 <li onMouseOver={() => setMeta("Sofas and Recliners")} onClick={() => setPage("Sofas & Recliners")}>Sofas & Recliners</li>
@@ -159,7 +152,7 @@ export const Navbar = () => {
                 <li onMouseOver={() => setMeta("appliances")} onClick={() => setPage("Appliances")}>Appliances</li>
                 <li onMouseOver={() => setMeta("modular")} onClick={() => setPage("Modular")}>Modular</li>
               </ul>
-            ) : subMenu == "inspired" ? (
+            ) : subMenu === "inspired" ? (
               <ul className={styles.menu}>
                 <li>Ideas</li>
                 <li>Buying Guides</li>

@@ -1,5 +1,5 @@
 import { Button, Icon, IconButton, Typography } from '@mui/material'
-import React, { useContext, useEffect, useState } from 'react'
+import React, {useEffect} from 'react'
 import styles from './styles.module.css'
 import { AiOutlineClose } from "react-icons/ai"
 import { IconContext } from 'react-icons/lib'
@@ -21,8 +21,7 @@ const MainCart = () => {
             setWishlist, 
             setCart, 
             cart, 
-            wishlist, 
-            Auth
+            wishlist
         } = React.useContext(ProductContext);
 
 
