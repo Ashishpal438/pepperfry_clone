@@ -89,3 +89,8 @@ You can also take the glimpse of our Project,just follow the below steps:
 - **Github** : 31wizard-ash07
 - **Email** : ashishsingh9720@gmail.com
 - **LinkedIn** : https://www.linkedin.com/in/ashish-singh-507ua/
+### Neha Chatse
+- **Github** : nehachatse
+- **Email** : nehachatse02@gmail.com
+- **LinkedIn** : https://www.linkedin.com/in/neha-chatse-a12065189/
+
