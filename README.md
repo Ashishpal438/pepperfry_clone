@@ -86,7 +86,7 @@ You can also take the glimpse of our Project,just follow the below steps:
 - **Email** : ashishpal438@gmail.com
 - **Linkedin** : https://www.linkedin.com/in/ashish-kumar-pal-2a6954188/
 ### Ashish Singh
-- **Github** : 31wizard-ash07
+- **Github** : wizard3107
 - **Email** : ashishsingh9720@gmail.com
 - **LinkedIn** : https://www.linkedin.com/in/ashish-singh-507ua/
 ### Neha Chatse
