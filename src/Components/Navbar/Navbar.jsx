@@ -41,7 +41,7 @@ const Li = styled.li`
   margin-right: 3rem;
   cursor: pointer;
 
-  ${props => props.selected == props.subMenu ?
+  ${props => props.selected === props.subMenu ?
     ({
       color: "black",
       fontWeight: "bolder",
@@ -62,8 +62,8 @@ export const Navbar = () => {
   const [searchOption, setSearchOption] = React.useState(false);
   const [loginVis, setLoginVis] = React.useState(false);
   const { disp_change, loginModal, logInopen, setLogInOpen, handleloginClose, handleLoginOpen, opencart, setOpencart
-,handleClosecart,handleOpencart,Auth}=useContext(ProductContext)
-  
+    , handleClosecart, handleOpencart, Auth } = useContext(ProductContext)
+
   const cancleMeta = () => {
     setMeta("");
   }
@@ -103,10 +103,10 @@ export const Navbar = () => {
               </ul>
               {/* </div> */}
               <div className={styles.search}>
-              <input type="text" placeholder="Door to happiness begins with a Search" value={searchKey} onChange={(e) => handleChange(e)} onClick={() => setSearch(true)} />
+                <input type="text" placeholder="Door to happiness begins with a Search" value={searchKey} onChange={(e) => handleChange(e)} onClick={() => setSearch(true)} />
                 <FiSearch className={styles.icon} />
               </div>
-              {searchOption && <SearchFun word={searchKey} setSearchOption={handleEmpty}/>}
+              {searchOption && <SearchFun word={searchKey} setSearchOption={handleEmpty} />}
               {search && <SearchTab handleRemoveSearch={handleRemoveSearch} />}
             </div>
           </LeftNav>
@@ -118,27 +118,27 @@ export const Navbar = () => {
             </div>
 
             <div className={styles.profile}>
-              <BsHeart onClick={()=> Auth?handleOpencart("wishlist"):alert("Please Login to view the wishlist")} className={styles.profileIcon} />
-              <RiShoppingCart2Line onClick={()=> Auth?handleOpencart("mycart"):(alert("Please Login to view the cart"))} className={styles.profileIcon} />
+              <BsHeart onClick={() => Auth ? handleOpencart("wishlist") : alert("Please Login to view the wishlist")} className={styles.profileIcon} />
+              <RiShoppingCart2Line onClick={() => Auth ? handleOpencart("mycart") : (alert("Please Login to view the cart"))} className={styles.profileIcon} />
               <Modal
                 keepMounted
                 open={opencart}
                 onClose={handleClosecart}
               >
-                <MainCart/>
+                <MainCart />
               </Modal>
               <HiOutlineUser size="2rem" style={{ position: "relative" }} onMouseEnter={() => setLoginVis(true)} />
               {loginVis && (<div className={styles.loginVisible} onMouseLeave={() => setLoginVis(false)}>
                 <button onClick={handleLoginOpen}>LOGIN/REGISTER</button>
-                <Modal
+                <p>To access your account & manage orders</p>
+              </div>)}
+              <Modal
                 keepMounted
                 open={logInopen}
                 onClose={handleloginClose}
-            >
-            {loginModal==="signUp"?<SignUp/>:loginModal==="login"?<LogIn/>:<OTP/>}
-            </Modal>
-                <p>To access your account & manage orders</p>
-              </div>)}
+              >
+                {loginModal === "signUp" ? <SignUp /> : loginModal === "login" ? <LogIn /> : <OTP />}
+              </Modal>
             </div>
           </RightNav>
         </div>
@@ -146,7 +146,7 @@ export const Navbar = () => {
         <div className={styles.heading} style={{ display: "flex", position: "relative" }} onMouseLeave={() => setSubMenu("shop")} >
 
           {
-            subMenu == "shop" ? (
+            subMenu === "shop" ? (
               <ul className={styles.menu} >
                 <li onMouseOver={() => setMeta("furniture")} >Furniture</li>
                 <li onMouseOver={() => setMeta("Sofas and Recliners")} onClick={() => setPage("Sofas & Recliners")}>Sofas & Recliners</li>
@@ -159,7 +159,7 @@ export const Navbar = () => {
                 <li onMouseOver={() => setMeta("appliances")} onClick={() => setPage("Appliances")}>Appliances</li>
                 <li onMouseOver={() => setMeta("modular")} onClick={() => setPage("Modular")}>Modular</li>
               </ul>
-            ) : subMenu == "inspired" ? (
+            ) : subMenu === "inspired" ? (
               <ul className={styles.menu}>
                 <li>Ideas</li>
                 <li>Buying Guides</li>
