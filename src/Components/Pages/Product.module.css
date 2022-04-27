@@ -118,3 +118,11 @@
     margin-left: 0.3rem;
 }
 
+/* radio button styling */
+input[type=radio] {
+    border: 0px;
+    width: 10%;
+    height: 1.2em;
+    cursor: pointer;
+    margin-top: 5px;
+}
